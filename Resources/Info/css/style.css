@@ -693,8 +693,9 @@ li:last-child.store .image, .store:last-child a {
 	display: block;
 	font-weight: bold;
 	color: rgb(73,102,145);
-	font-size: 12pt;
-	margin-bottom: 6px;
+	font-size: 14pt;
+	margin-bottom: 4px;
+	margin-top: 8px;
 	line-height: 14pt;
 }
 .musiclist ul, .ipodlist ul, .applist ul {

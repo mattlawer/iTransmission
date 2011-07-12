@@ -11,8 +11,10 @@
 @interface InfoViewController : UIViewController <UIWebViewDelegate>
 {
     NSString *pageName;
+    UIActivityIndicatorView *activityIndicator;
 }
 @property (nonatomic, retain) NSString *pageName;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 
 + (id)infoWithPageName:(NSString*)pageName;
 - (id)initWithPageName:(NSString*)pageName;

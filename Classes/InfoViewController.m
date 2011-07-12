@@ -8,8 +8,12 @@
 
 #import "InfoViewController.h"
 
+#import <libtransmission/version.h>
+#import <event2/event-config.h>
+
 @implementation InfoViewController
 @synthesize pageName;
+@synthesize activityIndicator;
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,6 +51,23 @@
 {
     [super viewDidLoad];
     
+    CGRect frame = CGRectMake(0.0, 0.0, 25.0, 25.0);
+    self.activityIndicator = [[[UIActivityIndicatorView alloc]
+                              initWithFrame:frame] autorelease];
+    [self.activityIndicator sizeToFit];
+    [self.activityIndicator setHidesWhenStopped:YES];
+    self.activityIndicator.autoresizingMask =
+    (UIViewAutoresizingFlexibleLeftMargin |
+     UIViewAutoresizingFlexibleRightMargin |
+     UIViewAutoresizingFlexibleTopMargin |
+     UIViewAutoresizingFlexibleBottomMargin);
+    
+    UIBarButtonItem *loadingView = [[UIBarButtonItem alloc] 
+                                    initWithCustomView:self.activityIndicator];
+    loadingView.target = self;
+    self.navigationItem.rightBarButtonItem = loadingView;
+    [loadingView release];
+    
     NSString *pagePath = [[[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Info"] stringByAppendingPathComponent:self.pageName] stringByAppendingPathExtension:@"html"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:pagePath] cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:5.0f];
@@ -55,19 +76,40 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    NSLog(@"Loading resource %@", [[request URL] absoluteString]);
+{    
+    if (![[[request URL] scheme] isEqualToString:@"file"]) {
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        return NO;
+    }
+    
+    if ([[[[request URL] absoluteString] lastPathComponent] isEqualToString:@"about.html"]) {
+        
+    }
+    
+    [self.activityIndicator startAnimating];
+    
     return YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.title = title;
+    
+    if ([[[[webView.request URL] absoluteString] lastPathComponent] isEqualToString:@"about.html"]) {
+        NSString *viTrans = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('itransmission_version').innerHTML = '%@'", viTrans]];
+        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('libtransmission_version').innerHTML = '%s'", LONG_VERSION_STRING]];
+        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('libevent_version').innerHTML = '%s'", _EVENT_VERSION]];
+    }
+    
+    [self.activityIndicator stopAnimating];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"%@", [error description]);
+    [self.activityIndicator stopAnimating];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

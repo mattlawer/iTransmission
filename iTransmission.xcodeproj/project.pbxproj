@@ -620,7 +620,7 @@
 					"-lutp",
 				);
 				PRODUCT_NAME = iTransmission;
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -648,7 +648,7 @@
 					"-lutp",
 				);
 				PRODUCT_NAME = iTransmission;
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -693,7 +693,7 @@
 				);
 				PRODUCT_NAME = iTransmission;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
