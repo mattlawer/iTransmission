@@ -18,7 +18,7 @@
 @synthesize progressView = fProgressView;
 @synthesize controlButton = fControlButton;
 
-+ (id)createFromNib
++ (id)cellFromNib
 {
     NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"TorrentCell" owner:nil options:nil];
 	TorrentCell *cell = (TorrentCell*)[objects objectAtIndex:0];

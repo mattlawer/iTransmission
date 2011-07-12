@@ -129,7 +129,7 @@
     TorrentCell *cell = (TorrentCell*)[tableView dequeueReusableCellWithIdentifier:TorrentCellIdentifier];
     
     if (!cell) {
-        cell = [TorrentCell createFromNib];
+        cell = [TorrentCell cellFromNib];
 		[cell.controlButton addTarget:self action:@selector(controlButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 	}
     
@@ -257,9 +257,9 @@
 	
     [self.activityCounterBadge setBadgeColor:[UIColor colorWithRed:1.000 green:0.397 blue:0.419 alpha:1.000]];
 	
-	self.statisticsView = [StatisticsView createFromNib];
-	self.statisticsView.controller = self.controller;
-	[self.view addSubview:self.statisticsView];
+//	self.statisticsView = [StatisticsView createFromNib];
+//	self.statisticsView.controller = self.controller;
+//	[self.view addSubview:self.statisticsView];
 }
 
 - (void)resumeButtonClicked:(id)sender
@@ -326,8 +326,6 @@
 	for (TorrentCell *cell in visibleCells) {
 		[self performSelector:@selector(updateCell:) withObject:cell afterDelay:0.0f];
 	}
-	
-	[self.statisticsView updateUI];
 }
 	
 - (void)updateCell:(TorrentCell*)c

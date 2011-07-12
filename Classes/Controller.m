@@ -37,14 +37,6 @@ static void pumpLogMessages()
     tr_freeMessageList( list );
 }
 
-static void altSpeedToggledCallback(tr_session * handle UNUSED, bool active, bool byUser, void * controller)
-{
-    NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys: [[NSNumber alloc] initWithBool: active], @"Active",
-                           [[NSNumber alloc] initWithBool: byUser], @"ByUser", nil];
-    [(Controller *)controller performSelectorOnMainThread: @selector(altSpeedToggledCallbackIsLimited:)
-                                               withObject: dict waitUntilDone: NO];
-}
-
 static tr_rpc_callback_status rpcCallback(tr_session * handle UNUSED, tr_rpc_callback_type type, struct tr_torrent * torrentStruct,
                                           void * controller)
 {

@@ -14,6 +14,7 @@
 #import "FlexibleLabelCell.h"
 #import "NSDate+Helper.h"
 #import "BandwidthController.h"
+#import "FileListViewController.h"
 
 #define HEADER_SECTION 0
 #define TITLE_ROW 0
@@ -43,12 +44,12 @@
 #define UPLOADED_ROW 4
 #define RATIO_ROW 5
 
-#define MORE_SECTION 12350
+#define MORE_SECTION 5
 #define FILES_ROW 0
 #define TRACKERS_ROW 1
 #define PEERS_ROW 2
 
-#define LOCATION_SECTION 5
+#define LOCATION_SECTION 6
 #define DATA_LOCATION_ROW 0
 #define TORRENT_LOCATION_ROW 1
 
@@ -121,7 +122,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (indexPath.section == MORE_SECTION) {
-		[[[[UIAlertView alloc] initWithTitle:@"Sorry" message:@"This is not implemented currently. " delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease] show];
+        if (indexPath.row == FILES_ROW) {
+            FileListViewController *c = [[[FileListViewController alloc] initWithTorrent:self.torrent] autorelease];
+            [self.navigationController pushViewController:c animated:YES];
+        }
 		[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	}
     else if (indexPath.section == LOCATION_SECTION) {
@@ -263,7 +267,7 @@
 			return 2;
 			break;
 		case MORE_SECTION:
-			return 3;
+			return 1;
 			break;
 		default:
 			break;
@@ -485,6 +489,7 @@
 	self.refreshButton = nil;
     self.bandwidthButton = nil;
     self.selectedIndexPath = nil;
+    self.tableView = nil;
 	[fTitleCell release];
 	[fTitleLabel release];
 	[fIconView release];

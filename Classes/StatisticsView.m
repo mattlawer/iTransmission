@@ -27,12 +27,18 @@
 	StatisticsView *v = (StatisticsView*)[objects objectAtIndex:0];
 	[v setFrame:CGRectMake(0, 0, 320, 20)];
 	[v.backgroundView setImage:[[UIImage imageNamed:@"status-view-background"] stretchableImageWithLeftCapWidth:0 topCapHeight:0]];
+    
 	return [v retain];
 }
 
 - (void)startUpdate
 {
     [self.updateTimer invalidate];
+    
+    if (self.controller == nil) {
+        self.controller = (Controller*)[[UIApplication sharedApplication] delegate];
+    }
+    
 	self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
 	[self timerFired:self.updateTimer];
 }

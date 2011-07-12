@@ -25,6 +25,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *lowerDetailLabel;
 @property (nonatomic, retain) IBOutlet ControlButton *controlButton;
 
-+ (id)createFromNib;
++ (id)cellFromNib;
 
 @end
