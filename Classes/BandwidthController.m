@@ -39,7 +39,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.torrent) return 2;
+    if (self.torrent) return 1;
     else return 3;
 }
 
@@ -385,6 +385,7 @@
     [fUploadSpeedLimitEnabledSwitch release];
     [fUploadSpeedLimitEnabledCell release];
     [fOverrideSpeedLimitsCell release];
+    self.tableView = nil;
     [fOverrideSpeedLimitSwitch release];
     self.indexPathToScroll = nil;
 	[super dealloc];

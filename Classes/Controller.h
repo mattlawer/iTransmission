@@ -67,6 +67,8 @@ extern BOOL isStartingTransferAllowed();
     NSArray *fInstalledApps;
     
     CGFloat fGlobalSpeedCached[2];
+    
+    NSTimer *fLogMessageTimer;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -75,6 +77,7 @@ extern BOOL isStartingTransferAllowed();
 @property (nonatomic, readonly) NSInteger activityCounter;
 @property (nonatomic, retain) Reachability *reachability;
 @property (nonatomic, retain) NSArray *installedApps;
+@property (nonatomic, retain) NSTimer *logMessageTimer;
 
 - (void)transmissionInitialize;
 - (NSArray*)findRelatedApps;
@@ -137,7 +140,7 @@ extern BOOL isStartingTransferAllowed();
 - (NSInteger)globalMaximumConnections;
 - (void)setConnectionsPerTorrent:(NSInteger)c;
 - (NSInteger)connectionsPerTorrent;
-
+- (void)pumpLogMessages;
 - (void)updateGlobalSpeed;
 
 @end

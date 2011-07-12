@@ -17,6 +17,26 @@
 
 #define APP_NAME "iTrans"
 
+static void
+printMessage(int level, const char * name, const char * message, const char * file, int line )
+{
+    char timestr[64];
+    tr_getLogTimeStr( timestr, sizeof( timestr ) );
+    if( name )
+        printf("[%s] %s %s (%s:%d)\n", timestr, name, message, file, line );
+}
+
+static void pumpLogMessages()
+{
+    const tr_msg_list * l;
+    tr_msg_list * list = tr_getQueuedMessages( );
+    
+    for( l=list; l!=NULL; l=l->next )
+        printMessage(l->level, l->name, l->message, l->file, l->line );
+    
+    tr_freeMessageList( list );
+}
+
 static void altSpeedToggledCallback(tr_session * handle UNUSED, bool active, bool byUser, void * controller)
 {
     NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys: [[NSNumber alloc] initWithBool: active], @"Active",
@@ -48,6 +68,7 @@ static void signal_handler(int sig) {
 @synthesize torrentViewController;
 @synthesize activityCounter;
 @synthesize reachability;
+@synthesize logMessageTimer = fLogMessageTimer;
 @synthesize installedApps = fInstalledApps;
 
 #pragma mark -
@@ -72,6 +93,10 @@ static void signal_handler(int sig) {
 	
     [self.window makeKeyAndVisible];
     
+    /* Pump messages if needed */
+    [self pumpLogMessages];
+    self.logMessageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pumpLogMessages) userInfo:nil repeats:YES];
+    
     return YES;
 }
 
@@ -86,6 +111,11 @@ static void signal_handler(int sig) {
     }
     
     return [NSArray arrayWithArray:ret];
+}
+
+- (void)pumpLogMessages
+{
+    pumpLogMessages();
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -308,6 +338,7 @@ static void signal_handler(int sig) {
 
 - (void)dealloc {
     [fTorrents release];
+    self.logMessageTimer = nil;
     fTorrents = nil;
     [fActivities release];
     fActivities = nil;
@@ -788,6 +819,7 @@ static void signal_handler(int sig) {
     [fDefaults setInteger:kbytes forKey:@"UploadLimit"];
     [fDefaults synchronize];
     tr_sessionSetSpeedLimit_KBps(fLib, TR_UP, [fDefaults integerForKey:@"UploadLimit"]);
+    NSLog(@"tr_sessionIsSpeedLimited(TR_UP): %d", tr_sessionIsSpeedLimited(fLib, TR_UP));
 }
 
 - (void)setGlobalDownloadSpeedLimit:(NSInteger)kbytes
@@ -795,6 +827,7 @@ static void signal_handler(int sig) {
     [fDefaults setInteger:kbytes forKey:@"DownloadLimit"];
     [fDefaults synchronize];
     tr_sessionSetSpeedLimit_KBps(fLib, TR_DOWN, [fDefaults integerForKey:@"DownloadLimit"]);
+    NSLog(@"tr_sessionIsSpeedLimited(TR_DOWN): %d", tr_sessionIsSpeedLimited(fLib, TR_DOWN));
 }
 
 - (void)setGlobalUploadSpeedLimitEnabled:(BOOL)enabled

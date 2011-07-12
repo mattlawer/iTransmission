@@ -457,6 +457,7 @@ int trashDataFile(const char * filename)
 - (void) setSpeedLimit: (NSInteger) limit upload: (BOOL) upload
 {
     tr_torrentSetSpeedLimit_KBps(fHandle, upload ? TR_UP : TR_DOWN, limit);
+    NSLog(@"tr_torrentUsesSessionLimits: %d", tr_torrentUsesSessionLimits(fHandle));
 }
 
 - (BOOL) usesGlobalSpeedLimit
@@ -467,6 +468,7 @@ int trashDataFile(const char * filename)
 - (void) setUseGlobalSpeedLimit: (BOOL) use
 {
     tr_torrentUseSessionLimits(fHandle, use);
+    NSLog(@"tr_torrentUsesSessionLimits: %d", tr_torrentUsesSessionLimits(fHandle));
 }
 
 - (void) setMaxPeerConnect: (uint16_t) count
