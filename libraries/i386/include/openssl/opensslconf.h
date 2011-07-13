@@ -71,8 +71,8 @@
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/Users/ccp/dropbox/src/itransmission/make_depend/out/i386/lib/engines"
-#define OPENSSLDIR "/Users/ccp/dropbox/src/itransmission/make_depend/out/i386"
+#define ENGINESDIR "/Users/ccp/iTransmission/make_depend/out/i386/lib/engines"
+#define OPENSSLDIR "/Users/ccp/iTransmission/make_depend/out/i386"
 #endif
 #endif
 

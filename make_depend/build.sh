@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #########################
-ARCH="armv6"
-SDK_VERSION="5.0"
+ARCH="i386"
+SDK_VERSION="4.3"
 PARALLEL_NUM=3
 #########################
 
@@ -135,6 +135,8 @@ function do_openssl {
 	make -j ${PARALLEL_NUM}
 	make install
 	
+	rm -rf ${BUILD_DIR}/share/man
+	
 	popd
 	
 }
@@ -161,6 +163,8 @@ function do_zlib {
 	
 	make -j ${PARALLEL_NUM}
 	make install
+	
+	rm -rf ${BUILD_DIR}/share/man
 	
 	popd
 }

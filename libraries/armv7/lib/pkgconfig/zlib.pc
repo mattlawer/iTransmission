@@ -1,4 +1,4 @@
-prefix=/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7
+prefix=/Users/ccp/iTransmission/make_depend/out/armv7
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 sharedlibdir=${libdir}

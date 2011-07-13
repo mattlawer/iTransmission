@@ -6,8 +6,8 @@
 
 my $openssl;
 
-my $dir = "/Users/ccp/dropbox/src/itransmission/make_depend/out/i386";
-my $prefix = "/Users/ccp/dropbox/src/itransmission/make_depend/out/i386";
+my $dir = "/Users/ccp/iTransmission/make_depend/out/i386";
+my $prefix = "/Users/ccp/iTransmission/make_depend/out/i386";
 
 if(defined $ENV{OPENSSL}) {
 	$openssl = $ENV{OPENSSL};

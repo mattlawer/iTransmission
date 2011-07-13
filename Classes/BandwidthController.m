@@ -39,7 +39,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.torrent) return 1;
+    if (self.torrent) return 2;
     else return 3;
 }
 

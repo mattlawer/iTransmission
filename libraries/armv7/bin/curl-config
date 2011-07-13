@@ -21,7 +21,7 @@
 #
 ###########################################################################
 
-prefix=/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7
+prefix=/Users/ccp/iTransmission/make_depend/out/armv7
 exec_prefix=${prefix}
 includedir=${prefix}/include
 
@@ -142,18 +142,18 @@ while test $# -gt 0; do
 	   CURLLIBDIR=""
 	fi
 	if test "Xyes" = "Xyes"; then
-	  echo ${CURLLIBDIR}-lcurl -L/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -lssl -lcrypto -lz 
+	  echo ${CURLLIBDIR}-lcurl -L/Users/ccp/iTransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -lssl -lcrypto -lz 
 	else
-	  echo ${CURLLIBDIR}-lcurl -L/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk 
+	  echo ${CURLLIBDIR}-lcurl -L/Users/ccp/iTransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk 
 	fi
 	;;
 
     --static-libs)
-	echo ${exec_prefix}/lib/libcurl.a -L/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -lssl -lcrypto -lz 
+	echo ${exec_prefix}/lib/libcurl.a -L/Users/ccp/iTransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -lssl -lcrypto -lz 
 	;;
 
     --configure)
-      echo " '--host' 'arm-apple-darwin' '--prefix=/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7' '--disable-shared' '--enable-static' '--disable-ipv6' '--disable-manual' '--with-random=/dev/urandom' '--with-ssl' '--with-zlib' 'host_alias=arm-apple-darwin' 'CC=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc -arch armv7' 'CFLAGS=-I/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/include -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk' 'LDFLAGS= -L/Users/ccp/dropbox/src/itransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk' 'CPP=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/cpp'"
+      echo " '--host' 'arm-apple-darwin' '--prefix=/Users/ccp/iTransmission/make_depend/out/armv7' '--disable-shared' '--enable-static' '--disable-ipv6' '--disable-manual' '--with-random=/dev/urandom' '--with-ssl' '--with-zlib' 'host_alias=arm-apple-darwin' 'CC=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc -arch armv7' 'CFLAGS=-I/Users/ccp/iTransmission/make_depend/out/armv7/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include -pipe -no-cpp-precomp -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk' 'LDFLAGS= -L/Users/ccp/iTransmission/make_depend/out/armv7/lib -pipe -no-cpp-precomp -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/lib -L/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -Wl,-syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk' 'CPP=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/cpp'"
     ;;
 
     *)
