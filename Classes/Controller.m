@@ -336,6 +336,8 @@ static void signal_handler(int sig) {
     fActivities = nil;
 	self.window = nil;
 	self.reachability = nil;
+    self.installedApps = nil;
+    self.torrentViewController = nil;
 	[super dealloc];
 }
 

@@ -384,9 +384,9 @@
     [fDownloadSpeedLimitEnabledCell release];
     [fUploadSpeedLimitEnabledSwitch release];
     [fUploadSpeedLimitEnabledCell release];
+    [fOverrideSpeedLimitSwitch release];
     [fOverrideSpeedLimitsCell release];
     self.tableView = nil;
-    [fOverrideSpeedLimitSwitch release];
     self.indexPathToScroll = nil;
 	[super dealloc];
 }

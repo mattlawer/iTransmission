@@ -22,13 +22,15 @@
     IBOutlet UITableViewCell *fAutoPortMapCell;
     IBOutlet UITableViewCell *fRPCRequireAuthCell;
     IBOutlet UITableViewCell *fBindPortCell;
+    IBOutlet UITableViewCell *fEnableLoggingCell;
     IBOutlet GradientButton *fCheckPortButton;
-	
+    
 	IBOutlet UISwitch *fEnableRPCSwitch;
 	IBOutlet UISwitch *fRPCRequireAuthSwitch;
 	IBOutlet UISwitch *fUseWiFiSwitch;
 	IBOutlet UISwitch *fUseCellularNetworkSwitch;
 	IBOutlet UISwitch *fAutoPortMapSwitch;
+    IBOutlet UISwitch *fEnableLoggingSwitch;
 	IBOutlet UITextField *fBindPortTextField;
 	IBOutlet UITextField *fRPCUsernameTextField;
 	IBOutlet UITextField *fRPCPasswordTextField;

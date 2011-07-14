@@ -70,6 +70,8 @@
     
     NSString *pagePath = [[[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Info"] stringByAppendingPathComponent:self.pageName] stringByAppendingPathExtension:@"html"];
     
+    self.pageName = nil;
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:pagePath] cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:5.0f];
     [(UIWebView*)self.view loadRequest:request];
     
@@ -128,6 +130,13 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (void)dealloc
+{
+    self.pageName = nil;
+    self.activityIndicator = nil;
+    [super dealloc];
 }
 
 @end

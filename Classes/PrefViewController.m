@@ -427,6 +427,7 @@
 	self.tableView = nil;
 	[self.portChecker cancelProbe];
 	self.portChecker = nil;
+    self.originalPreferences = nil;
     [fTextFieldTextColor release];
     [fBindPortCell release];
     [fEnableRPCCell release];

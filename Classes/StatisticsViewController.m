@@ -30,15 +30,6 @@ StatisticsViewController *__activeController;
     return self;
 }
 
-- (void)dealloc
-{
-    self.statisticsView = nil;
-	[self.UIUpdateTimer invalidate];
-	self.UIUpdateTimer = nil;
-	
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -95,6 +86,14 @@ StatisticsViewController *__activeController;
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)dealloc
+{
+    self.statisticsView = nil;
+    [self.UIUpdateTimer invalidate];
+    self.UIUpdateTimer = nil;
+    [super dealloc];
 }
 
 @end

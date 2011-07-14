@@ -58,6 +58,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    self.filepath = nil;
+    [super dealloc];
+}
+
 @end
 
 @implementation TorrentAutoDiscoveryController
@@ -106,6 +112,7 @@
     self.tableView = nil;
     self.searchResults = nil;
     self.searchBar = nil;
+    self.lastDiscoveryDate = nil;
     [super dealloc];
 }
 
