@@ -173,7 +173,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="955702649">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="334423636">
 									<string key="name">Helvetica-Bold</string>
 									<string key="family">Helvetica</string>
 									<int key="traits">2</int>
@@ -206,11 +206,11 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="32148591"/>
-				<object class="IBUIFontDescription" key="IBUIFontDescription" id="68920364">
+				<object class="IBUIFontDescription" key="IBUIFontDescription" id="525312">
 					<int key="type">1</int>
 					<int key="size">4</int>
 				</object>
-				<object class="NSFont" key="IBUIFont" id="305737220">
+				<object class="NSFont" key="IBUIFont" id="14198822">
 					<string key="NSName">Helvetica</string>
 					<double key="NSSize">14</double>
 					<int key="NSfFlags">16</int>
@@ -251,7 +251,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -272,8 +272,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="72847859"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier">CellWithSwitch</string>
 			</object>
 			<object class="IBUITableViewCell" id="609071453">
@@ -310,7 +310,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -331,8 +331,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="319531290"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier">CellWithSwitch</string>
 			</object>
 			<object class="IBUITableViewCell" id="78519801">
@@ -369,7 +369,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -390,8 +390,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="600672575"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier">CellWithSwitch</string>
 			</object>
 			<object class="IBUITableViewCell" id="85656501">
@@ -432,7 +432,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -457,23 +457,23 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="651893924"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier">CellWithSwitch</string>
 			</object>
-			<object class="IBUITableViewCell" id="136875390">
+			<object class="IBUITableViewCell" id="129785048">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIView" id="875934535">
-						<reference key="NSNextResponder" ref="136875390"/>
+					<object class="IBUIView" id="643302166">
+						<reference key="NSNextResponder" ref="129785048"/>
 						<int key="NSvFlags">256</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUISwitch" id="409860762">
-								<reference key="NSNextResponder" ref="875934535"/>
+							<object class="IBUISwitch" id="436312532">
+								<reference key="NSNextResponder" ref="643302166"/>
 								<int key="NSvFlags">297</int>
 								<string key="NSFrame">{{216, 8}, {94, 27}}</string>
-								<reference key="NSSuperview" ref="875934535"/>
+								<reference key="NSSuperview" ref="643302166"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -482,13 +482,13 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<bool key="IBUIOn">YES</bool>
 							</object>
-							<object class="IBUILabel" id="674726045">
-								<reference key="NSNextResponder" ref="875934535"/>
+							<object class="IBUILabel" id="588131041">
+								<reference key="NSNextResponder" ref="643302166"/>
 								<int key="NSvFlags">294</int>
 								<string key="NSFrame">{{10, 11}, {173, 21}}</string>
-								<reference key="NSSuperview" ref="875934535"/>
+								<reference key="NSSuperview" ref="643302166"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="409860762"/>
+								<reference key="NSNextKeyView" ref="436312532"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -499,14 +499,14 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 44}</string>
-						<reference key="NSSuperview" ref="136875390"/>
+						<reference key="NSSuperview" ref="129785048"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="674726045"/>
+						<reference key="NSNextKeyView" ref="588131041"/>
 						<reference key="IBUIBackgroundColor" ref="866854842"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -518,14 +518,14 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="875934535"/>
+				<reference key="NSNextKeyView" ref="643302166"/>
 				<reference key="IBUIBackgroundColor" ref="28815123"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
-				<reference key="IBUIContentView" ref="875934535"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIContentView" ref="643302166"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier">CellWithSwitch</string>
 			</object>
 			<object class="IBUITableViewCell" id="404477098">
@@ -557,7 +557,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="714102684">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="451510796">
 									<string key="name">Helvetica</string>
 									<string key="family">Helvetica</string>
 									<int key="traits">0</int>
@@ -585,7 +585,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 							<object class="IBUIButton" id="368255386">
@@ -652,8 +652,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="106279841"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier"/>
 			</object>
 			<object class="IBUITableViewCell" id="235693795">
@@ -685,7 +685,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="714102684"/>
+								<reference key="IBUIFontDescription" ref="451510796"/>
 								<reference key="IBUIFont" ref="1030755415"/>
 							</object>
 							<object class="IBUILabel" id="155187958">
@@ -705,7 +705,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -730,8 +730,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="499883026"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier"/>
 			</object>
 			<object class="IBUITableViewCell" id="986516894">
@@ -761,7 +761,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="714102684"/>
+								<reference key="IBUIFontDescription" ref="451510796"/>
 								<reference key="IBUIFont" ref="1030755415"/>
 							</object>
 							<object class="IBUILabel" id="820804513">
@@ -780,7 +780,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -802,8 +802,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="815770369"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier"/>
 			</object>
 			<object class="IBUITableViewCell" id="633064798">
@@ -834,7 +834,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 									<bool key="IBUISecureTextEntry">YES</bool>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="714102684"/>
+								<reference key="IBUIFontDescription" ref="451510796"/>
 								<reference key="IBUIFont" ref="1030755415"/>
 							</object>
 							<object class="IBUILabel" id="446027735">
@@ -852,7 +852,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
-								<reference key="IBUIFontDescription" ref="955702649"/>
+								<reference key="IBUIFontDescription" ref="334423636"/>
 								<reference key="IBUIFont" ref="925757618"/>
 							</object>
 						</array>
@@ -873,8 +873,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="200466290"/>
-				<reference key="IBUIFontDescription" ref="68920364"/>
-				<reference key="IBUIFont" ref="305737220"/>
+				<reference key="IBUIFontDescription" ref="525312"/>
+				<reference key="IBUIFont" ref="14198822"/>
 				<string key="IBUIReuseIdentifier"/>
 			</object>
 		</array>
@@ -1161,11 +1161,36 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">switchChanged:</string>
-						<reference key="source" ref="409860762"/>
+						<reference key="source" ref="436312532"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">13</int>
 					</object>
 					<int key="connectionID">84</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">fEnableLoggingCell</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="129785048"/>
+					</object>
+					<int key="connectionID">85</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">fEnableLoggingSwitch</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="436312532"/>
+					</object>
+					<int key="connectionID">86</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">enableLoggingSwitchChanged:</string>
+						<reference key="source" ref="436312532"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">87</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1395,23 +1420,23 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">81</int>
-						<reference key="object" ref="136875390"/>
+						<reference key="object" ref="129785048"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="674726045"/>
-							<reference ref="409860762"/>
+							<reference ref="588131041"/>
+							<reference ref="436312532"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">EnableLogging</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">82</int>
-						<reference key="object" ref="674726045"/>
-						<reference key="parent" ref="136875390"/>
+						<reference key="object" ref="588131041"/>
+						<reference key="parent" ref="129785048"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">83</int>
-						<reference key="object" ref="409860762"/>
-						<reference key="parent" ref="136875390"/>
+						<reference key="object" ref="436312532"/>
+						<reference key="parent" ref="129785048"/>
 					</object>
 				</array>
 			</object>
@@ -1460,7 +1485,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">84</int>
+			<int key="maxID">87</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1479,6 +1504,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<string key="RPCRequireAuthSwitchChanged:">id</string>
 						<string key="UseWiFiSwitchChanged:">id</string>
 						<string key="checkPortButtonClicked:">id</string>
+						<string key="enableLoggingSwitchChanged:">id</string>
 						<string key="enableRPCSwitchChanged:">id</string>
 						<string key="switchChanged:">id</string>
 					</dictionary>
@@ -1493,6 +1519,10 @@ AAgACAAIAAEAAQABAAE</bytes>
 						</object>
 						<object class="IBActionInfo" key="checkPortButtonClicked:">
 							<string key="name">checkPortButtonClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="enableLoggingSwitchChanged:">
+							<string key="name">enableLoggingSwitchChanged:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="enableRPCSwitchChanged:">
@@ -1510,6 +1540,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<string key="fBindPortCell">UITableViewCell</string>
 						<string key="fBindPortTextField">UITextField</string>
 						<string key="fCheckPortButton">GradientButton</string>
+						<string key="fEnableLoggingCell">UITableViewCell</string>
+						<string key="fEnableLoggingSwitch">UISwitch</string>
 						<string key="fEnableRPCCell">UITableViewCell</string>
 						<string key="fEnableRPCSwitch">UISwitch</string>
 						<string key="fPortCheckActivityIndicator">UIActivityIndicatorView</string>
@@ -1547,6 +1579,14 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<object class="IBToOneOutletInfo" key="fCheckPortButton">
 							<string key="name">fCheckPortButton</string>
 							<string key="candidateClassName">GradientButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="fEnableLoggingCell">
+							<string key="name">fEnableLoggingCell</string>
+							<string key="candidateClassName">UITableViewCell</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="fEnableLoggingSwitch">
+							<string key="name">fEnableLoggingSwitch</string>
+							<string key="candidateClassName">UISwitch</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="fEnableRPCCell">
 							<string key="name">fEnableRPCCell</string>

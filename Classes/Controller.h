@@ -44,6 +44,7 @@ typedef enum
 @class Torrent;
 @class TorrentViewController;
 @class Reachability;
+@class DDFileLogger;
 
 extern BOOL isStartingTransferAllowed();
 
@@ -69,6 +70,7 @@ extern BOOL isStartingTransferAllowed();
     CGFloat fGlobalSpeedCached[2];
     
     NSTimer *fLogMessageTimer;
+    DDFileLogger *fFileLogger;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -78,6 +80,7 @@ extern BOOL isStartingTransferAllowed();
 @property (nonatomic, retain) Reachability *reachability;
 @property (nonatomic, retain) NSArray *installedApps;
 @property (nonatomic, retain) NSTimer *logMessageTimer;
+@property (nonatomic, retain) DDFileLogger *fileLogger;
 
 - (void)transmissionInitialize;
 - (NSArray*)findRelatedApps;
@@ -94,6 +97,7 @@ extern BOOL isStartingTransferAllowed();
 - (NSString*)randomTorrentPath;
 - (NSString*)defaultDownloadDir;
 - (NSString*)configDir;
+- (NSString*)documentsDirectory;
 - (void)updateTorrentHistory;
 - (void)loadTorrentHistory;
 - (void)resetToDefaultPreferences;
@@ -142,6 +146,10 @@ extern BOOL isStartingTransferAllowed();
 - (NSInteger)connectionsPerTorrent;
 - (void)pumpLogMessages;
 - (void)updateGlobalSpeed;
+- (BOOL)isLoggingEnabled;
+- (void)setLoggingEnabled:(BOOL)enabled;
+- (void)startLogging;
+- (void)stopLogging;
 
 @end
 

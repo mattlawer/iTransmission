@@ -18,6 +18,7 @@
 @synthesize originalPreferences = fOriginalPreferences;
 @synthesize portChecker = fPortChecker;
 @synthesize indexPathToScroll = fIndexPathToScroll;
+@synthesize controller = fController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -136,7 +137,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
@@ -145,6 +146,7 @@
         case 0: return 5;
         case 1: return 2;
         case 2: return 2;
+        case 3: return 1;
     }
     return 0;
 }
@@ -155,6 +157,7 @@
         case 0: return @"Web Interface";
         case 1: return @"Network Interface";
         case 2: return @"Port Listening";
+        case 3: return @"Logging";
     }
     return nil;
 }
@@ -165,6 +168,7 @@
         case 0: return @"It's always recommended to use authentication if web interface is enabled. ";
         case 1: return @"Enabling cellular network may generate significant data charges. ";
         case 2: return nil;
+        case 3: return @"Only use logging for debugging. Extensive loggings will shorten both battery and Nand life. Saved logs will be available in iTunes. ";
     }
     return nil;
 }
@@ -191,6 +195,11 @@
             switch (indexPath.row) {
                 case 0: return fBindPortCell;
                 case 1: return fAutoPortMapCell;
+            }
+        }
+        case 3: {
+            switch (indexPath.row) {
+                case 0: return fEnableLoggingCell;
             }
         }
     }
@@ -297,6 +306,9 @@
 	if (callSetNetworkActive)
 		[controller updateNetworkStatus];
 	
+    [fDefaults setBool:[fEnableLoggingSwitch isOn] forKey:@"LoggingEnabled"];
+    [self.controller setLoggingEnabled:[fEnableLoggingSwitch isOn]];
+    
 	[fDefaults synchronize]; 
     
     [self performSelector:@selector(loadPreferences) withObject:nil afterDelay:0.0f];
@@ -330,6 +342,7 @@
 	[_originalPref setInteger:[fDefaults integerForKey:@"BindPort"] forKey:@"BindPort"];
 	[_originalPref setBool:[fDefaults boolForKey:@"UseWiFi"] forKey:@"UseWiFi"];
 	[_originalPref setBool:[fDefaults boolForKey:@"UseCellularNetwork"] forKey:@"UseCellularNetwork"];
+    [_originalPref setBool:[fDefaults boolForKey:@"LoggingEnabled"] forKey:@"LoggingEnabled"];
 	self.originalPreferences = [NSDictionary dictionaryWithDictionary:_originalPref];
 	
 	[fEnableRPCSwitch setOn:[self.originalPreferences boolForKey:@"RPC"]];
@@ -340,6 +353,7 @@
 	[fBindPortTextField setText:[NSString stringWithFormat:@"%i", [self.originalPreferences integerForKey:@"BindPort"]]];
 	[fUseWiFiSwitch setOn:[self.originalPreferences boolForKey:@"UseWiFi"]];
 	[fUseCellularNetworkSwitch setOn:[self.originalPreferences boolForKey:@"UseCellularNetwork"]];
+    [fEnableLoggingSwitch setOn:[self.originalPreferences boolForKey:@"LoggingEnabled"]];
     
     [self enableRPCSwitchChanged:fEnableRPCSwitch];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
@@ -385,6 +399,11 @@
 		UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Disable WiFi" message:@"Disabling WiFi is strongly discouraged! Please make sure this is what you want. " delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease];
 		[alertView show];
 	}
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
+}
+
+- (IBAction)enableLoggingSwitchChanged:(id)sender
+{    
     [self.navigationItem.rightBarButtonItem setEnabled:YES];
 }
 
@@ -448,6 +467,9 @@
 	[fRPCUsernameTextField release];
 	[fRPCPasswordTextField release];
 	[fRPCPortTextField release];
+    [fEnableLoggingCell release];
+    [fEnableLoggingSwitch release];
+    self.controller = nil;
     self.indexPathToScroll = nil;
     [super dealloc];
 }

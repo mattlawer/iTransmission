@@ -78,7 +78,6 @@
 		74EF1F38126C0AE10054A20E /* YellowDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 74EF1F36126C0AE10054A20E /* YellowDot.png */; };
 		74F50F1112607FCE00797580 /* PortChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F50F1012607FCE00797580 /* PortChecker.m */; };
 		7E19589C13CBEE3C006F4A03 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 7E19589B13CBEE3C006F4A03 /* web */; };
-		7E23F07A13B1A78100D8C85A /* changelog in Resources */ = {isa = PBXBuildFile; fileRef = 7E23F07913B1A78100D8C85A /* changelog */; };
 		7E255BD813CC3BC6009783B4 /* FileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255BD613CC3BC6009783B4 /* FileListViewController.m */; };
 		7E255BDC13CC3BFC009783B4 /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E255BDB13CC3BFC009783B4 /* FileListViewController.xib */; };
 		7E255BDF13CC3E98009783B4 /* FileListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255BDE13CC3E98009783B4 /* FileListCell.m */; };
@@ -88,6 +87,11 @@
 		7E255BE813CC4F7A009783B4 /* checkbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E255BE613CC4F7A009783B4 /* checkbox_unchecked.png */; };
 		7E45C7AF1391FF9800C46D76 /* donedown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E45C7AD1391FF9800C46D76 /* donedown.png */; };
 		7E45C7B01391FF9800C46D76 /* doneup.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E45C7AE1391FF9800C46D76 /* doneup.png */; };
+		7E4C5FC013CEA15400095B64 /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C5FBF13CEA15200095B64 /* NSString+RelativePath.m */; };
+		7E4C5FCC13CEA7E100095B64 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C5FC413CEA7C900095B64 /* DDASLLogger.m */; };
+		7E4C5FCD13CEA7E100095B64 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C5FC613CEA7CF00095B64 /* DDFileLogger.m */; };
+		7E4C5FCE13CEA7E100095B64 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C5FC813CEA7D800095B64 /* DDLog.m */; };
+		7E4C5FCF13CEA7E100095B64 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C5FCA13CEA7DF00095B64 /* DDTTYLogger.m */; };
 		7E9AA79713CC0118006A4174 /* Info in Resources */ = {isa = PBXBuildFile; fileRef = 7E9AA79613CC0118006A4174 /* Info */; };
 		7E9AA79A13CC0138006A4174 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AA79913CC0138006A4174 /* InfoViewController.m */; };
 		7E9B37DC1395F992006D55C7 /* itransmission-icon-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B37DB1395F992006D55C7 /* itransmission-icon-large.png */; };
@@ -209,7 +213,6 @@
 		74F50F0F12607FCE00797580 /* PortChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortChecker.h; sourceTree = "<group>"; };
 		74F50F1012607FCE00797580 /* PortChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortChecker.m; sourceTree = "<group>"; };
 		7E19589B13CBEE3C006F4A03 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = Resources/web; sourceTree = "<group>"; };
-		7E23F07913B1A78100D8C85A /* changelog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = changelog; path = Resources/changelog; sourceTree = "<group>"; };
 		7E255BD513CC3BC6009783B4 /* FileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListViewController.h; sourceTree = "<group>"; };
 		7E255BD613CC3BC6009783B4 /* FileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListViewController.m; sourceTree = "<group>"; };
 		7E255BDB13CC3BFC009783B4 /* FileListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileListViewController.xib; path = Resources/FileListViewController.xib; sourceTree = "<group>"; };
@@ -222,6 +225,16 @@
 		7E255BE613CC4F7A009783B4 /* checkbox_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkbox_unchecked.png; path = Resources/checkbox_unchecked.png; sourceTree = "<group>"; };
 		7E45C7AD1391FF9800C46D76 /* donedown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donedown.png; path = Resources/donedown.png; sourceTree = "<group>"; };
 		7E45C7AE1391FF9800C46D76 /* doneup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doneup.png; path = Resources/doneup.png; sourceTree = "<group>"; };
+		7E4C5FBE13CEA15000095B64 /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
+		7E4C5FBF13CEA15200095B64 /* NSString+RelativePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RelativePath.m"; sourceTree = "<group>"; };
+		7E4C5FC313CEA7C600095B64 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		7E4C5FC413CEA7C900095B64 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		7E4C5FC513CEA7CB00095B64 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		7E4C5FC613CEA7CF00095B64 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		7E4C5FC713CEA7D200095B64 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		7E4C5FC813CEA7D800095B64 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		7E4C5FC913CEA7DC00095B64 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		7E4C5FCA13CEA7DF00095B64 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		7E9AA79613CC0118006A4174 /* Info */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Info; path = Resources/Info; sourceTree = "<group>"; };
 		7E9AA79813CC0138006A4174 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		7E9AA79913CC0138006A4174 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
@@ -302,12 +315,22 @@
 				74275D0212582DD00098BCE8 /* TorrentCell.m */,
 				74AF610F12581D8200550520 /* FileListNode.h */,
 				74AF611012581D8200550520 /* FileListNode.m */,
+				7E4C5FBE13CEA15000095B64 /* NSString+RelativePath.h */,
+				7E4C5FBF13CEA15200095B64 /* NSString+RelativePath.m */,
 				74AF60AD1258195600550520 /* Torrent.h */,
 				74AF60AE1258195600550520 /* Torrent.m */,
 				74AF60AF1258195600550520 /* TrackerNode.h */,
 				74AF60B01258195600550520 /* TrackerNode.m */,
 				1D3623240D0F684500981E51 /* Controller.h */,
 				1D3623250D0F684500981E51 /* Controller.m */,
+				7E4C5FC313CEA7C600095B64 /* DDASLLogger.h */,
+				7E4C5FC413CEA7C900095B64 /* DDASLLogger.m */,
+				7E4C5FC513CEA7CB00095B64 /* DDFileLogger.h */,
+				7E4C5FC613CEA7CF00095B64 /* DDFileLogger.m */,
+				7E4C5FC713CEA7D200095B64 /* DDLog.h */,
+				7E4C5FC813CEA7D800095B64 /* DDLog.m */,
+				7E4C5FC913CEA7DC00095B64 /* DDTTYLogger.h */,
+				7E4C5FCA13CEA7DF00095B64 /* DDTTYLogger.m */,
 				74AF610612581D2500550520 /* NSStringAdditions.h */,
 				74AF610712581D2500550520 /* NSStringAdditions.m */,
 				7424548B1259FFC6003EACB1 /* DetailViewController.h */,
@@ -426,7 +449,6 @@
 				742455E2125A1732003EACB1 /* DetailViewController.xib */,
 				7469A46012700133005A404D /* BandwidthController.xib */,
 				7EBE82ED139750E600D4C5FC /* DiscoveredTorrentCell.xib */,
-				7E23F07913B1A78100D8C85A /* changelog */,
 				7E255BE013CC3EB3009783B4 /* FileListCell.xib */,
 			);
 			name = Resources;
@@ -532,7 +554,6 @@
 				7E9B38061396102F006D55C7 /* whiteArrow.png in Resources */,
 				7E9B38071396102F006D55C7 /* whiteArrow@2x.png in Resources */,
 				7EBE82EE139750E600D4C5FC /* DiscoveredTorrentCell.xib in Resources */,
-				7E23F07A13B1A78100D8C85A /* changelog in Resources */,
 				7E19589C13CBEE3C006F4A03 /* web in Resources */,
 				7E9AA79713CC0118006A4174 /* Info in Resources */,
 				7E255BDC13CC3BFC009783B4 /* FileListViewController.xib in Resources */,
@@ -604,6 +625,11 @@
 				7E255BD813CC3BC6009783B4 /* FileListViewController.m in Sources */,
 				7E255BDF13CC3E98009783B4 /* FileListCell.m in Sources */,
 				7E255BE413CC4F36009783B4 /* CheckboxControl.m in Sources */,
+				7E4C5FC013CEA15400095B64 /* NSString+RelativePath.m in Sources */,
+				7E4C5FCC13CEA7E100095B64 /* DDASLLogger.m in Sources */,
+				7E4C5FCD13CEA7E100095B64 /* DDFileLogger.m in Sources */,
+				7E4C5FCE13CEA7E100095B64 /* DDLog.m in Sources */,
+				7E4C5FCF13CEA7E100095B64 /* DDTTYLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

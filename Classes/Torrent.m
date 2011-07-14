@@ -27,6 +27,7 @@
 #import "NSStringAdditions.h"
 #import "TrackerNode.h"
 #import "Controller.h"
+#import "NSString+RelativePath.h"
 
 #define ETA_IDLE_DISPLAY_SEC (2*60)
 
@@ -188,7 +189,7 @@ int trashDataFile(const char * filename)
 - (NSDictionary *) history
 {
     NSMutableDictionary * history = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                     [self torrentLocation], @"InternalTorrentPath",
+                                     [[self torrentLocation] relativePathFromDocumentDirectory], @"InternalTorrentPath",
                                      [self hashString], @"TorrentHash",
                                      [NSNumber numberWithBool: [self isActive]], @"Active",
                                      [NSNumber numberWithBool: fWaitToStart], @"WaitToStart",
@@ -1615,11 +1616,13 @@ int trashDataFile(const char * filename)
         waitToStart: (NSNumber *) waitToStart
          groupValue: (NSNumber *) groupValue
 timeMachineExcludeLocation: (NSString *) timeMachineExclude
-     downloadFolder: (NSString *) downloadFolder
+     downloadFolder: (NSString *) _downloadFolder
 legacyIncompleteFolder: (NSString *) incompleteFolder
 {
     if (!(self = [super init]))
         return nil;
+    
+    NSString *downloadFolder = [_downloadFolder absolutePathFromDocumentDirectory];
     
     fDefaults = [NSUserDefaults standardUserDefaults];
     

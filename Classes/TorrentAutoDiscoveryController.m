@@ -347,13 +347,12 @@
 
 - (void)autoDiscoverySearchingAtPath:(NSString*)path
 {
-    
     NSLog(@"%@", path);
 }
 
 - (NSString*)historiesPlistFilepath
 {
-    return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"auto_discovery_histories.plist"];
+    return [[self.controller documentsDirectory] stringByAppendingPathComponent:@"auto_discovery_histories.plist"];
 }
 
 - (void)findTorrentFilesAtPath:(NSString*)dir

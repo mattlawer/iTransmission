@@ -10,8 +10,10 @@
 
 @class GradientButton;
 @class PortChecker;
+@class Controller;
 @interface PrefViewController :UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     UITableView *fTableView;
+    Controller *fController;
     
     IBOutlet UITableViewCell *fEnableRPCCell;
     IBOutlet UITableViewCell *fRPCUsernameCell;
@@ -51,6 +53,7 @@
 @property (nonatomic, retain) PortChecker *portChecker;
 @property (nonatomic, retain) NSDictionary *originalPreferences;
 @property (nonatomic, retain) NSIndexPath *indexPathToScroll;
+@property (nonatomic, assign) Controller *controller;
 
 - (void)closeButtonClicked;
 - (void)saveButtonClicked;
@@ -69,5 +72,6 @@
 - (IBAction)UseWiFiSwitchChanged:(id)sender;
 - (IBAction)switchChanged:(id)sender;
 - (IBAction)checkPortButtonClicked:(id)sender;
+- (IBAction)enableLoggingSwitchChanged:(id)sender;
 
 @end

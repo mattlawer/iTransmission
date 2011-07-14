@@ -13,9 +13,15 @@
 #import "TorrentFetcher.h"
 #import "Reachability.h"
 #import "MTStatusBarOverlay.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+#import "DDASLLogger.h"
+#import "DDFileLogger.h"
 #include <stdlib.h> // setenv()
 
 #define APP_NAME "iTrans"
+
+static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 static void
 printMessage(int level, const char * name, const char * message, const char * file, int line )
@@ -23,7 +29,7 @@ printMessage(int level, const char * name, const char * message, const char * fi
     char timestr[64];
     tr_getLogTimeStr( timestr, sizeof( timestr ) );
     if( name )
-        printf("[%s] %s %s (%s:%d)\n", timestr, name, message, file, line );
+        DDLogCVerbose(@"[%s] %s %s (%s:%d)", timestr, name, message, file, line );
 }
 
 static void pumpLogMessages()
@@ -62,6 +68,7 @@ static void signal_handler(int sig) {
 @synthesize reachability;
 @synthesize logMessageTimer = fLogMessageTimer;
 @synthesize installedApps = fInstalledApps;
+@synthesize fileLogger = fFileLogger;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -85,9 +92,14 @@ static void signal_handler(int sig) {
 	
     [self.window makeKeyAndVisible];
     
-    /* Pump messages if needed */
-    [self pumpLogMessages];
-    self.logMessageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pumpLogMessages) userInfo:nil repeats:YES];
+    /* start logging if needed */
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    if ([fDefaults objectForKey:@"LoggingEnabled"]) {
+        [self startLogging];
+        [self pumpLogMessages];
+    }
     
     return YES;
 }
@@ -263,7 +275,7 @@ static void signal_handler(int sig) {
 	fUpdateInProgress = NO;
 	
 	fPauseOnLaunch = YES;
-    //    tr_sessionSaveSettings(fLib, [[self configDir] cStringUsingEncoding:NSUTF8StringEncoding], &settings);
+//    tr_sessionSaveSettings(fLib, [[self configDir] cStringUsingEncoding:NSUTF8StringEncoding], &settings);
     
     [self loadTorrentHistory];
 	
@@ -338,33 +350,53 @@ static void signal_handler(int sig) {
 	self.reachability = nil;
     self.installedApps = nil;
     self.torrentViewController = nil;
+    self.fileLogger = nil;
 	[super dealloc];
+}
+
+- (NSString*)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+    
+    // I want iTunes backup & restore features. 
+//    NSError *error = nil;
+//#if TARGET_IPHONE_SIMULATOR
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    return documentsDirectory;
+//#else
+//    NSString *documentsDirectoryOutsideSandbox = @"/var/mobile/iTransmission/";
+//    if ([[NSFileManager defaultManager] createDirectoryAtPath:documentsDirectoryOutsideSandbox withIntermediateDirectories:YES attributes:nil error:&error]) {
+//        return documentsDirectoryOutsideSandbox;
+//    }
+//    else {
+//        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//        NSString *documentsDirectory = [paths objectAtIndex:0];
+//        return documentsDirectory;
+//    }
+//#endif
 }
 
 - (NSString*)defaultDownloadDir
 {
-	return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Downloads"];
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Downloads"];
 }
 
 - (NSString*)transferPlist
 {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	return [documentsDirectory stringByAppendingPathComponent:@"Transfer.plist"];
+	return [[self documentsDirectory] stringByAppendingPathComponent:@"Transfer.plist"];
 }
 
 - (NSString*)torrentsPath
 {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	return [documentsDirectory stringByAppendingPathComponent:@"torrents"];
+	return [[self documentsDirectory] stringByAppendingPathComponent:@"torrents"];
 }
 
 - (NSString*)configDir
 {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-    return [documentsDirectory stringByAppendingPathComponent:@"config"];
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"config"];
 }
 
 - (void)networkInterfaceChanged:(NSNotification*)notif
@@ -479,7 +511,9 @@ static void signal_handler(int sig) {
     BOOL isDir, exists;
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     
-    NSArray *directories = [NSArray arrayWithObjects:[self configDir], [self torrentsPath], [self defaultDownloadDir], [[self configDir] stringByAppendingPathComponent:@"torrents"], nil];
+    NSLog(@"Using documents directory %@", [self documentsDirectory]);
+    
+    NSArray *directories = [NSArray arrayWithObjects:[self documentsDirectory], [self configDir], [self torrentsPath], [self defaultDownloadDir], nil];
     
     for (NSString *d in directories) {
         exists = [fileManager fileExistsAtPath:d isDirectory:&isDir];
@@ -530,6 +564,7 @@ static void signal_handler(int sig) {
             Torrent * torrent;
             if ((torrent = [[Torrent alloc] initWithHistory: historyItem lib: fLib forcePause:NO]))
             {
+                [torrent changeDownloadFolderBeforeUsing:[self defaultDownloadDir]];
                 [fTorrents addObject: torrent];
                 [torrent release];
             }
@@ -880,6 +915,42 @@ static void signal_handler(int sig) {
 - (BOOL)globalDownloadSpeedLimitEnabled
 {
     return tr_sessionIsSpeedLimited(fLib, TR_DOWN);
+}
+
+- (BOOL)isLoggingEnabled
+{
+    return (self.fileLogger != nil);
+}
+
+- (void)startLogging
+{
+    if (![self isLoggingEnabled]) {
+        self.fileLogger = [[[DDFileLogger alloc] init] autorelease];
+        self.fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+        self.fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+        [DDLog addLogger:self.fileLogger];
+        self.logMessageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pumpLogMessages) userInfo:nil repeats:YES];
+    }
+}
+
+- (void)stopLogging
+{
+    if ([self isLoggingEnabled]) {
+        [DDLog removeLogger:self.fileLogger];
+        self.fileLogger = nil;
+        [self.logMessageTimer invalidate];
+        self.logMessageTimer = nil;
+    }
+}
+
+- (void)setLoggingEnabled:(BOOL)enabled
+{
+    if (enabled) {
+        [self startLogging];
+    }
+    else {
+        [self stopLogging];
+    }
 }
 
 @end
