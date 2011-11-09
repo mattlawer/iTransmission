@@ -184,6 +184,7 @@
             if (self.selectedIndexPath.row == TORRENT_LOCATION_ROW)
                 path = [self.torrent torrentLocation];
             path = [NSString stringWithFormat:@"ifile://%@", path];
+            //path = [NSString stringWithFormat:@"finder://%@", path];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
         }
     }

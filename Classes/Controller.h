@@ -71,6 +71,8 @@ extern BOOL isStartingTransferAllowed();
     
     NSTimer *fLogMessageTimer;
     DDFileLogger *fFileLogger;
+    
+    UIBackgroundTaskIdentifier bgTaskId;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -150,6 +152,9 @@ extern BOOL isStartingTransferAllowed();
 - (void)setLoggingEnabled:(BOOL)enabled;
 - (void)startLogging;
 - (void)stopLogging;
+
+- (void)torrentFinished:(NSNotification*)notif;
+- (void)postBGNotif:(NSString *)message;
 
 @end
 

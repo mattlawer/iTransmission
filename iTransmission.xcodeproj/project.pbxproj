@@ -27,6 +27,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		4EF8CF891469F4C8004CB688 /* bandwidth-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CF881469F4C8004CB688 /* bandwidth-icon@2x.png */; };
+		4EF8CF8C1469F5AE004CB688 /* gear-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CF8B1469F5AE004CB688 /* gear-icon@2x.png */; };
 		74244F8B1259E4D1003EACB1 /* cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 74244F8A1259E4D1003EACB1 /* cell-background.png */; };
 		74244FAB1259EE73003EACB1 /* status-view-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 74244FAA1259EE73003EACB1 /* status-view-background.png */; };
 		74244FF61259F1E3003EACB1 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 74244FF41259F1E3003EACB1 /* down_arrow.png */; };
@@ -68,7 +70,6 @@
 		74AFF2D5126DC296006ECB5C /* ClipboardLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AFF2D4126DC296006ECB5C /* ClipboardLabel.m */; };
 		74AFF3A7126DCF42006ECB5C /* TransparentBackgroundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AFF3A6126DCF42006ECB5C /* TransparentBackgroundCell.m */; };
 		74AFF3E0126DD361006ECB5C /* question-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 74AFF3DF126DD361006ECB5C /* question-mark.png */; };
-		74B1536A12595A5F0079AD89 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B1536912595A5F0079AD89 /* Activity.m */; };
 		74E1BCB81259836F00F8842E /* magnet_ex in Resources */ = {isa = PBXBuildFile; fileRef = 74E1BCB71259836F00F8842E /* magnet_ex */; };
 		74E1BCC512598E4100F8842E /* first_run_message in Resources */ = {isa = PBXBuildFile; fileRef = 74E1BCC412598E4100F8842E /* first_run_message */; };
 		74E1BCCF125992AB00F8842E /* ShadowedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E1BCCE125992AB00F8842E /* ShadowedTableView.m */; };
@@ -133,6 +134,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* iTransmission_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTransmission_Prefix.pch; sourceTree = "<group>"; };
+		4EF8CF881469F4C8004CB688 /* bandwidth-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bandwidth-icon@2x.png"; path = "Resources/bandwidth-icon@2x.png"; sourceTree = "<group>"; };
+		4EF8CF8B1469F5AE004CB688 /* gear-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gear-icon@2x.png"; path = "Resources/gear-icon@2x.png"; sourceTree = "<group>"; };
 		74244F8A1259E4D1003EACB1 /* cell-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-background.png"; path = "Resources/cell-background.png"; sourceTree = "<group>"; };
 		74244FAA1259EE73003EACB1 /* status-view-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-view-background.png"; path = "Resources/status-view-background.png"; sourceTree = "<group>"; };
 		74244FF41259F1E3003EACB1 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down_arrow.png; path = Resources/down_arrow.png; sourceTree = "<group>"; };
@@ -199,8 +202,6 @@
 		74AFF3A6126DCF42006ECB5C /* TransparentBackgroundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentBackgroundCell.m; sourceTree = "<group>"; };
 		74AFF3DF126DD361006ECB5C /* question-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "question-mark.png"; path = "Resources/question-mark.png"; sourceTree = "<group>"; };
 		74B1534F1258CEEB0079AD89 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
-		74B1536812595A5F0079AD89 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		74B1536912595A5F0079AD89 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		74E1BCB71259836F00F8842E /* magnet_ex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = magnet_ex; path = Resources/magnet_ex; sourceTree = "<group>"; };
 		74E1BCC412598E4100F8842E /* first_run_message */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = first_run_message; path = Resources/first_run_message; sourceTree = "<group>"; };
 		74E1BCCD125992AB00F8842E /* ShadowedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowedTableView.h; sourceTree = "<group>"; };
@@ -285,94 +286,29 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7E9B37F513960F1E006D55C7 /* EGORefreshTableHeaderView.h */,
-				7E9B37F613960F1E006D55C7 /* EGORefreshTableHeaderView.m */,
+				4E8270A1146880CB000BBE40 /* Helpers+Additions */,
+				4E82709A14687E11000BBE40 /* RegEx */,
+				4E82709114687CB9000BBE40 /* DDLog */,
+				4E82709014687C98000BBE40 /* Reachability */,
+				4E82708F14687C4C000BBE40 /* StatisticsView (Bar) */,
+				4E82708E14687C49000BBE40 /* ColoredProgress */,
+				4E82708C14687C45000BBE40 /* MTStatusBarOverlay */,
+				4EF518EE14688536006C8443 /* EGORefreshTableHeaderView */,
+				4E82709B14687EC2000BBE40 /* Controllers */,
+				4E82709C14687F1A000BBE40 /* Cells */,
+				4EF518EC146884FB006C8443 /* UI Components */,
 				74F50F0F12607FCE00797580 /* PortChecker.h */,
 				74F50F1012607FCE00797580 /* PortChecker.m */,
-				7424542D1259FAF5003EACB1 /* PDColoredProgressView.h */,
-				7424542E1259FAF5003EACB1 /* PDColoredProgressView.m */,
-				74E1BCCD125992AB00F8842E /* ShadowedTableView.h */,
-				74E1BCCE125992AB00F8842E /* ShadowedTableView.m */,
-				74B1536812595A5F0079AD89 /* Activity.h */,
-				74B1536912595A5F0079AD89 /* Activity.m */,
 				74B1534F1258CEEB0079AD89 /* Notifications.h */,
-				7448A6BA1258C176009BAF99 /* TDBadgedCell.h */,
-				7448A6BB1258C176009BAF99 /* TDBadgedCell.m */,
 				7448A6A41258B46D009BAF99 /* TorrentFetcher.h */,
 				7448A6A51258B46D009BAF99 /* TorrentFetcher.m */,
-				7448A69A1258B106009BAF99 /* RegexExtension.h */,
-				7448A69B1258B106009BAF99 /* RegexExtension.m */,
-				7448A6871258AE60009BAF99 /* RegexKitLite.h */,
-				7448A6881258AE60009BAF99 /* RegexKitLite.m */,
 				7448A6801258AA4F009BAF99 /* UIAlertViewPrivate.h */,
-				74275D5312589FD00098BCE8 /* GradientButton.h */,
-				74275D5412589FD00098BCE8 /* GradientButton.m */,
-				74275D2112586FFF0098BCE8 /* PrefViewController.h */,
-				74275D2212586FFF0098BCE8 /* PrefViewController.m */,
-				74275D09125831680098BCE8 /* TorrentViewController.h */,
-				74275D0A125831680098BCE8 /* TorrentViewController.m */,
-				74275D0112582DD00098BCE8 /* TorrentCell.h */,
-				74275D0212582DD00098BCE8 /* TorrentCell.m */,
 				74AF610F12581D8200550520 /* FileListNode.h */,
 				74AF611012581D8200550520 /* FileListNode.m */,
-				7E4C5FBE13CEA15000095B64 /* NSString+RelativePath.h */,
-				7E4C5FBF13CEA15200095B64 /* NSString+RelativePath.m */,
 				74AF60AD1258195600550520 /* Torrent.h */,
 				74AF60AE1258195600550520 /* Torrent.m */,
 				74AF60AF1258195600550520 /* TrackerNode.h */,
 				74AF60B01258195600550520 /* TrackerNode.m */,
-				1D3623240D0F684500981E51 /* Controller.h */,
-				1D3623250D0F684500981E51 /* Controller.m */,
-				7E4C5FC313CEA7C600095B64 /* DDASLLogger.h */,
-				7E4C5FC413CEA7C900095B64 /* DDASLLogger.m */,
-				7E4C5FC513CEA7CB00095B64 /* DDFileLogger.h */,
-				7E4C5FC613CEA7CF00095B64 /* DDFileLogger.m */,
-				7E4C5FC713CEA7D200095B64 /* DDLog.h */,
-				7E4C5FC813CEA7D800095B64 /* DDLog.m */,
-				7E4C5FC913CEA7DC00095B64 /* DDTTYLogger.h */,
-				7E4C5FCA13CEA7DF00095B64 /* DDTTYLogger.m */,
-				74AF610612581D2500550520 /* NSStringAdditions.h */,
-				74AF610712581D2500550520 /* NSStringAdditions.m */,
-				7424548B1259FFC6003EACB1 /* DetailViewController.h */,
-				7424548C1259FFC6003EACB1 /* DetailViewController.m */,
-				7455B63B125AE0500066FBE7 /* ControlButton.h */,
-				7455B63C125AE0500066FBE7 /* ControlButton.m */,
-				7EDFDA581391D858004E3BB0 /* NSDate+Helper.h */,
-				7EDFDA591391D858004E3BB0 /* NSDate+Helper.m */,
-				74AC8E151259E1A500342907 /* GradientView.h */,
-				74AC8E161259E1A500342907 /* GradientView.m */,
-				7437B03D125B2FF300B456EF /* NSDictionaryAdditions.h */,
-				7437B03E125B2FF300B456EF /* NSDictionaryAdditions.m */,
-				7437B137125B3BFC00B456EF /* Reachability.h */,
-				7437B138125B3BFC00B456EF /* Reachability.m */,
-				74EF1F07126C04960054A20E /* StatisticsView.h */,
-				74EF1F08126C04960054A20E /* StatisticsView.m */,
-				7EDFDA5B1391DE08004E3BB0 /* MTStatusBarOverlay.h */,
-				7EDFDA5C1391DE09004E3BB0 /* MTStatusBarOverlay.m */,
-				74AFF1C4126D5A57006ECB5C /* TransparentClickArea.h */,
-				74AFF1C5126D5A57006ECB5C /* TransparentClickArea.m */,
-				74AFF2D3126DC296006ECB5C /* ClipboardLabel.h */,
-				74AFF2D4126DC296006ECB5C /* ClipboardLabel.m */,
-				74AFF3A5126DCF42006ECB5C /* TransparentBackgroundCell.h */,
-				74AFF3A6126DCF42006ECB5C /* TransparentBackgroundCell.m */,
-				742A92E8126EB6E60070AD10 /* FlexibleLabelCell.h */,
-				742A92E9126EB6E60070AD10 /* FlexibleLabelCell.m */,
-				7469A45A126FFF28005A404D /* BandwidthController.h */,
-				7469A45B126FFF28005A404D /* BandwidthController.m */,
-				7EDFDA5E1391E127004E3BB0 /* StatisticsViewController.h */,
-				7EDFDA5F1391E127004E3BB0 /* StatisticsViewController.m */,
-				7E9B37E813960ABE006D55C7 /* TorrentAutoDiscoveryController.h */,
-				7E9B37E913960ABE006D55C7 /* TorrentAutoDiscoveryController.m */,
-				7EBE82EA139750C300D4C5FC /* DiscoveredTorrentCell.h */,
-				7EBE82EB139750C400D4C5FC /* DiscoveredTorrentCell.m */,
-				7E9AA79813CC0138006A4174 /* InfoViewController.h */,
-				7E9AA79913CC0138006A4174 /* InfoViewController.m */,
-				7E255BD513CC3BC6009783B4 /* FileListViewController.h */,
-				7E255BD613CC3BC6009783B4 /* FileListViewController.m */,
-				7E255BDD13CC3E97009783B4 /* FileListCell.h */,
-				7E255BDE13CC3E98009783B4 /* FileListCell.m */,
-				7E255BE213CC4F32009783B4 /* CheckboxControl.h */,
-				7E255BE313CC4F33009783B4 /* CheckboxControl.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -409,47 +345,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E82709D14687F68000BBE40 /* Nibs */,
+				4E8270A014687FD8000BBE40 /* Images */,
 				7E9AA79613CC0118006A4174 /* Info */,
 				7E19589B13CBEE3C006F4A03 /* web */,
-				7E9B38041396102F006D55C7 /* whiteArrow.png */,
-				7E9B38051396102F006D55C7 /* whiteArrow@2x.png */,
-				7E255BDB13CC3BFC009783B4 /* FileListViewController.xib */,
-				7E255BE513CC4F7A009783B4 /* checkbox_checked.png */,
-				7E255BE613CC4F7A009783B4 /* checkbox_unchecked.png */,
-				7E9B380013961022006D55C7 /* grayArrow.png */,
-				7E9B380113961022006D55C7 /* grayArrow@2x.png */,
-				7E9B37F81396101B006D55C7 /* blackArrow.png */,
-				7E9B37F91396101B006D55C7 /* blackArrow@2x.png */,
-				7E9B37FA1396101B006D55C7 /* blueArrow.png */,
-				7E9B37FB1396101B006D55C7 /* blueArrow@2x.png */,
-				7E9B37EA13960ABF006D55C7 /* TorrentAutoDiscoveryController.xib */,
-				7E9B37DB1395F992006D55C7 /* itransmission-icon-large.png */,
-				74AFF3DF126DD361006ECB5C /* question-mark.png */,
-				74EF1F35126C0AE10054A20E /* GreenDot.png */,
-				74EF1F36126C0AE10054A20E /* YellowDot.png */,
-				74704B5E125B0F23007DB01C /* app-icon.png */,
-				74244FAA1259EE73003EACB1 /* status-view-background.png */,
-				74244F8A1259E4D1003EACB1 /* cell-background.png */,
 				74861F721259DBA0005FDE74 /* gpl-3.0.txt */,
 				74E1BCC412598E4100F8842E /* first_run_message */,
 				74E1BCB71259836F00F8842E /* magnet_ex */,
 				7448A6941258B025009BAF99 /* url_ex */,
-				7448A68A1258AE69009BAF99 /* PrefViewController.xib */,
-				74275CFF12582CBD0098BCE8 /* TorrentCell.xib */,
-				7448A68B1258AE69009BAF99 /* TorrentViewController.xib */,
-				7E45C7AD1391FF9800C46D76 /* donedown.png */,
-				7E45C7AE1391FF9800C46D76 /* doneup.png */,
-				74275D4D1258981E0098BCE8 /* gear-icon.png */,
-				74AF601F1258186600550520 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* iTransmission-Info.plist */,
-				74244FF41259F1E3003EACB1 /* down_arrow.png */,
-				74244FF51259F1E3003EACB1 /* up-arrow.png */,
-				74EF1F0A126C04D10054A20E /* StatisticsView.xib */,
-				7469A45F12700133005A404D /* bandwidth-icon.png */,
-				742455E2125A1732003EACB1 /* DetailViewController.xib */,
-				7469A46012700133005A404D /* BandwidthController.xib */,
-				7EBE82ED139750E600D4C5FC /* DiscoveredTorrentCell.xib */,
-				7E255BE013CC3EB3009783B4 /* FileListCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -465,6 +369,223 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E82708C14687C45000BBE40 /* MTStatusBarOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				7EDFDA5B1391DE08004E3BB0 /* MTStatusBarOverlay.h */,
+				7EDFDA5C1391DE09004E3BB0 /* MTStatusBarOverlay.m */,
+			);
+			name = MTStatusBarOverlay;
+			sourceTree = "<group>";
+		};
+		4E82708E14687C49000BBE40 /* ColoredProgress */ = {
+			isa = PBXGroup;
+			children = (
+				7424542D1259FAF5003EACB1 /* PDColoredProgressView.h */,
+				7424542E1259FAF5003EACB1 /* PDColoredProgressView.m */,
+			);
+			name = ColoredProgress;
+			sourceTree = "<group>";
+		};
+		4E82708F14687C4C000BBE40 /* StatisticsView (Bar) */ = {
+			isa = PBXGroup;
+			children = (
+				74EF1F07126C04960054A20E /* StatisticsView.h */,
+				74EF1F08126C04960054A20E /* StatisticsView.m */,
+			);
+			name = "StatisticsView (Bar)";
+			sourceTree = "<group>";
+		};
+		4E82709014687C98000BBE40 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				7437B137125B3BFC00B456EF /* Reachability.h */,
+				7437B138125B3BFC00B456EF /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		4E82709114687CB9000BBE40 /* DDLog */ = {
+			isa = PBXGroup;
+			children = (
+				7E4C5FC313CEA7C600095B64 /* DDASLLogger.h */,
+				7E4C5FC413CEA7C900095B64 /* DDASLLogger.m */,
+				7E4C5FC513CEA7CB00095B64 /* DDFileLogger.h */,
+				7E4C5FC613CEA7CF00095B64 /* DDFileLogger.m */,
+				7E4C5FC713CEA7D200095B64 /* DDLog.h */,
+				7E4C5FC813CEA7D800095B64 /* DDLog.m */,
+				7E4C5FC913CEA7DC00095B64 /* DDTTYLogger.h */,
+				7E4C5FCA13CEA7DF00095B64 /* DDTTYLogger.m */,
+			);
+			name = DDLog;
+			sourceTree = "<group>";
+		};
+		4E82709A14687E11000BBE40 /* RegEx */ = {
+			isa = PBXGroup;
+			children = (
+				7448A69A1258B106009BAF99 /* RegexExtension.h */,
+				7448A69B1258B106009BAF99 /* RegexExtension.m */,
+				7448A6871258AE60009BAF99 /* RegexKitLite.h */,
+				7448A6881258AE60009BAF99 /* RegexKitLite.m */,
+			);
+			name = RegEx;
+			sourceTree = "<group>";
+		};
+		4E82709B14687EC2000BBE40 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* Controller.h */,
+				1D3623250D0F684500981E51 /* Controller.m */,
+				74275D09125831680098BCE8 /* TorrentViewController.h */,
+				74275D0A125831680098BCE8 /* TorrentViewController.m */,
+				74275D2112586FFF0098BCE8 /* PrefViewController.h */,
+				74275D2212586FFF0098BCE8 /* PrefViewController.m */,
+				7424548B1259FFC6003EACB1 /* DetailViewController.h */,
+				7424548C1259FFC6003EACB1 /* DetailViewController.m */,
+				7469A45A126FFF28005A404D /* BandwidthController.h */,
+				7469A45B126FFF28005A404D /* BandwidthController.m */,
+				7EDFDA5E1391E127004E3BB0 /* StatisticsViewController.h */,
+				7EDFDA5F1391E127004E3BB0 /* StatisticsViewController.m */,
+				7E9B37E813960ABE006D55C7 /* TorrentAutoDiscoveryController.h */,
+				7E9B37E913960ABE006D55C7 /* TorrentAutoDiscoveryController.m */,
+				7E9AA79813CC0138006A4174 /* InfoViewController.h */,
+				7E9AA79913CC0138006A4174 /* InfoViewController.m */,
+				7E255BD513CC3BC6009783B4 /* FileListViewController.h */,
+				7E255BD613CC3BC6009783B4 /* FileListViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4E82709C14687F1A000BBE40 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7448A6BA1258C176009BAF99 /* TDBadgedCell.h */,
+				7448A6BB1258C176009BAF99 /* TDBadgedCell.m */,
+				74275D0112582DD00098BCE8 /* TorrentCell.h */,
+				74275D0212582DD00098BCE8 /* TorrentCell.m */,
+				74AFF3A5126DCF42006ECB5C /* TransparentBackgroundCell.h */,
+				74AFF3A6126DCF42006ECB5C /* TransparentBackgroundCell.m */,
+				742A92E8126EB6E60070AD10 /* FlexibleLabelCell.h */,
+				742A92E9126EB6E60070AD10 /* FlexibleLabelCell.m */,
+				7EBE82EA139750C300D4C5FC /* DiscoveredTorrentCell.h */,
+				7EBE82EB139750C400D4C5FC /* DiscoveredTorrentCell.m */,
+				7E255BDD13CC3E97009783B4 /* FileListCell.h */,
+				7E255BDE13CC3E98009783B4 /* FileListCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4E82709D14687F68000BBE40 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				74AF601F1258186600550520 /* MainWindow.xib */,
+				74EF1F0A126C04D10054A20E /* StatisticsView.xib */,
+				4E82709E14687F8F000BBE40 /* Controllers */,
+				4E82709F14687F9C000BBE40 /* Cells */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		4E82709E14687F8F000BBE40 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E255BDB13CC3BFC009783B4 /* FileListViewController.xib */,
+				7E9B37EA13960ABF006D55C7 /* TorrentAutoDiscoveryController.xib */,
+				7448A68A1258AE69009BAF99 /* PrefViewController.xib */,
+				7448A68B1258AE69009BAF99 /* TorrentViewController.xib */,
+				742455E2125A1732003EACB1 /* DetailViewController.xib */,
+				7469A46012700133005A404D /* BandwidthController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4E82709F14687F9C000BBE40 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				74275CFF12582CBD0098BCE8 /* TorrentCell.xib */,
+				7EBE82ED139750E600D4C5FC /* DiscoveredTorrentCell.xib */,
+				7E255BE013CC3EB3009783B4 /* FileListCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4E8270A014687FD8000BBE40 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B38041396102F006D55C7 /* whiteArrow.png */,
+				7E9B38051396102F006D55C7 /* whiteArrow@2x.png */,
+				7E255BE513CC4F7A009783B4 /* checkbox_checked.png */,
+				7E255BE613CC4F7A009783B4 /* checkbox_unchecked.png */,
+				7E9B380013961022006D55C7 /* grayArrow.png */,
+				7E9B380113961022006D55C7 /* grayArrow@2x.png */,
+				7E9B37F81396101B006D55C7 /* blackArrow.png */,
+				7E9B37F91396101B006D55C7 /* blackArrow@2x.png */,
+				7E9B37FA1396101B006D55C7 /* blueArrow.png */,
+				7E9B37FB1396101B006D55C7 /* blueArrow@2x.png */,
+				7E9B37DB1395F992006D55C7 /* itransmission-icon-large.png */,
+				74AFF3DF126DD361006ECB5C /* question-mark.png */,
+				74EF1F35126C0AE10054A20E /* GreenDot.png */,
+				74EF1F36126C0AE10054A20E /* YellowDot.png */,
+				74704B5E125B0F23007DB01C /* app-icon.png */,
+				74244FAA1259EE73003EACB1 /* status-view-background.png */,
+				74244F8A1259E4D1003EACB1 /* cell-background.png */,
+				7E45C7AD1391FF9800C46D76 /* donedown.png */,
+				7E45C7AE1391FF9800C46D76 /* doneup.png */,
+				74275D4D1258981E0098BCE8 /* gear-icon.png */,
+				4EF8CF8B1469F5AE004CB688 /* gear-icon@2x.png */,
+				74244FF41259F1E3003EACB1 /* down_arrow.png */,
+				74244FF51259F1E3003EACB1 /* up-arrow.png */,
+				7469A45F12700133005A404D /* bandwidth-icon.png */,
+				4EF8CF881469F4C8004CB688 /* bandwidth-icon@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		4E8270A1146880CB000BBE40 /* Helpers+Additions */ = {
+			isa = PBXGroup;
+			children = (
+				7E4C5FBE13CEA15000095B64 /* NSString+RelativePath.h */,
+				7E4C5FBF13CEA15200095B64 /* NSString+RelativePath.m */,
+				74AF610612581D2500550520 /* NSStringAdditions.h */,
+				74AF610712581D2500550520 /* NSStringAdditions.m */,
+				7EDFDA581391D858004E3BB0 /* NSDate+Helper.h */,
+				7EDFDA591391D858004E3BB0 /* NSDate+Helper.m */,
+				7437B03D125B2FF300B456EF /* NSDictionaryAdditions.h */,
+				7437B03E125B2FF300B456EF /* NSDictionaryAdditions.m */,
+			);
+			name = "Helpers+Additions";
+			sourceTree = "<group>";
+		};
+		4EF518EC146884FB006C8443 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				74E1BCCD125992AB00F8842E /* ShadowedTableView.h */,
+				74E1BCCE125992AB00F8842E /* ShadowedTableView.m */,
+				74275D5312589FD00098BCE8 /* GradientButton.h */,
+				74275D5412589FD00098BCE8 /* GradientButton.m */,
+				7455B63B125AE0500066FBE7 /* ControlButton.h */,
+				7455B63C125AE0500066FBE7 /* ControlButton.m */,
+				74AC8E151259E1A500342907 /* GradientView.h */,
+				74AC8E161259E1A500342907 /* GradientView.m */,
+				74AFF1C4126D5A57006ECB5C /* TransparentClickArea.h */,
+				74AFF1C5126D5A57006ECB5C /* TransparentClickArea.m */,
+				74AFF2D3126DC296006ECB5C /* ClipboardLabel.h */,
+				74AFF2D4126DC296006ECB5C /* ClipboardLabel.m */,
+				7E255BE213CC4F32009783B4 /* CheckboxControl.h */,
+				7E255BE313CC4F33009783B4 /* CheckboxControl.m */,
+			);
+			name = "UI Components";
+			sourceTree = "<group>";
+		};
+		4EF518EE14688536006C8443 /* EGORefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B37F513960F1E006D55C7 /* EGORefreshTableHeaderView.h */,
+				7E9B37F613960F1E006D55C7 /* EGORefreshTableHeaderView.m */,
+			);
+			name = EGORefreshTableHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +681,8 @@
 				7E255BE113CC3EB3009783B4 /* FileListCell.xib in Resources */,
 				7E255BE713CC4F7A009783B4 /* checkbox_checked.png in Resources */,
 				7E255BE813CC4F7A009783B4 /* checkbox_unchecked.png in Resources */,
+				4EF8CF891469F4C8004CB688 /* bandwidth-icon@2x.png in Resources */,
+				4EF8CF8C1469F5AE004CB688 /* gear-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +723,6 @@
 				7448A69C1258B106009BAF99 /* RegexExtension.m in Sources */,
 				7448A6A61258B46D009BAF99 /* TorrentFetcher.m in Sources */,
 				7448A6BC1258C176009BAF99 /* TDBadgedCell.m in Sources */,
-				74B1536A12595A5F0079AD89 /* Activity.m in Sources */,
 				74E1BCCF125992AB00F8842E /* ShadowedTableView.m in Sources */,
 				74AC8E171259E1A500342907 /* GradientView.m in Sources */,
 				7424542F1259FAF5003EACB1 /* PDColoredProgressView.m in Sources */,

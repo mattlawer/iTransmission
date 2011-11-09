@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Activity.h"
 
 @class TorrentFetcher;
 @protocol TorrentFetcherDelegate <NSObject>
@@ -18,7 +17,7 @@
 @end
     
 
-@interface TorrentFetcher : Activity {
+@interface TorrentFetcher : NSObject {
     NSURLConnection *fURLConnection;
     NSMutableData *fData;
     NSString *url;

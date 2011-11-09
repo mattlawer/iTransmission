@@ -101,6 +101,8 @@ static void signal_handler(int sig) {
         [self pumpLogMessages];
     }
     
+    application.applicationIconBadgeNumber = 0;
+    
     return YES;
 }
 
@@ -124,7 +126,25 @@ static void signal_handler(int sig) {
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    NSLog(@"URL %@",url);
+    NSError *error = nil;
+    NSString *path = [self randomTorrentPath];
+    
+    NSLog(@"\nCopy :\nfrom : %@\nto   : %@\n",[url path], path);
+    //NSData *data = [NSData dataWithContentsOfURL:url];
+    //[data writeToFile:path options:0 error:&error];
+    [[NSFileManager defaultManager] copyItemAtPath:[url path] toPath:path error:&error];
+    error = [self openFile:path addType:ADD_URL forcePath:nil];
+    if (error) {
+        [[[[UIAlertView alloc] initWithTitle:@"Add from URL" message:[NSString stringWithFormat:@"Adding from %@ failed. %@", url, [error localizedDescription]]  delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease] show];
+    }
+    NSString *inbox = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Inbox"];
+    [[NSFileManager defaultManager] removeItemAtPath:inbox error:&error];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+	return YES;
 }
 
 - (void)resetToDefaultPreferences
@@ -281,6 +301,7 @@ static void signal_handler(int sig) {
 	
 	self.reachability = [Reachability reachabilityForInternetConnection];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkInterfaceChanged:) name:kReachabilityChangedNotification object:self.reachability];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(torrentFinished:) name:@"TorrentFinishedDownloading" object:nil];
 	[self.reachability startNotifier];
     [self postFinishMessage:@"Initialization finished."];
 }
@@ -305,6 +326,44 @@ static void signal_handler(int sig) {
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+    BOOL runInBackgroung = NO;
+    for (Torrent *torrent in fTorrents) {
+        if ([torrent isActive] && ![torrent isComplete]) {
+            runInBackgroung = YES;
+            break;
+        }
+    }
+    
+    UIBackgroundTaskIdentifier newTaskId = UIBackgroundTaskInvalid;
+    //NSLog(@"runInBackgroung : %@",runInBackgroung ? @"YES" : @"NO");
+    if (runInBackgroung) {
+        
+        newTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ 
+            
+            
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif == nil)
+                return;
+            localNotif.fireDate = nil;//Immediately
+            localNotif.alertBody = [NSString stringWithFormat:@"iTransmission will exit in %fs.",[[UIApplication sharedApplication] backgroundTimeRemaining]];
+            localNotif.soundName = UILocalNotificationDefaultSoundName;
+            
+            // Schedule the notification
+            [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+            [localNotif release];
+            
+            //[self stopLoading];
+            
+            [[UIApplication sharedApplication] endBackgroundTask:bgTaskId]; 
+            bgTaskId = UIBackgroundTaskInvalid;
+            [self applicationWillTerminate:[UIApplication sharedApplication]];
+        }];
+    }
+    
+    if (newTaskId != UIBackgroundTaskInvalid && bgTaskId != UIBackgroundTaskInvalid)
+		[[UIApplication sharedApplication] endBackgroundTask: bgTaskId];
+    
+	bgTaskId = newTaskId;
 }
 
 
@@ -312,6 +371,7 @@ static void signal_handler(int sig) {
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
+    application.applicationIconBadgeNumber = 0;
 }
 
 
@@ -338,7 +398,6 @@ static void signal_handler(int sig) {
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
-
 
 - (void)dealloc {
     [fTorrents release];
@@ -952,5 +1011,34 @@ static void signal_handler(int sig) {
         [self stopLogging];
     }
 }
+
+- (void)torrentFinished:(NSNotification*)notif {
+    [self postBGNotif:[NSString stringWithFormat:NSLocalizedString(@"%@ download finished.", nil), [(Torrent *)[notif object] name]]];
+}
+
+- (void)postBGNotif:(NSString *)message {
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+		UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+		if (localNotif == nil)
+			return;
+		localNotif.fireDate = nil;//Immediately
+		
+		// Notification details
+		localNotif.alertBody = message;
+		// Set the action button
+		localNotif.alertAction = @"View";
+		
+		localNotif.soundName = UILocalNotificationDefaultSoundName;
+		localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+		
+		// Specify custom data for the notification
+		//NSDictionary *infoDict = [NSDictionary dictionaryWithObject:file forKey:@"Downloaded"];
+		//localNotif.userInfo = infoDict;
+		
+		// Schedule the notification
+		[[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+		[localNotif release];
+	}
+} 
 
 @end

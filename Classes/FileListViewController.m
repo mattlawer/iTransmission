@@ -11,10 +11,12 @@
 #import "Torrent.h"
 #import "FileListNode.h"
 #import "NSStringAdditions.h"
+#import "Controller.h"
 
 @implementation FileListViewController
 @synthesize torrent = fTorrent;
 @synthesize tableView = fTableView;
+@synthesize docController = _docController;
 
 - (id)initWithTorrent:(Torrent*)t
 {
@@ -51,6 +53,7 @@
 
 - (void)dealloc
 {
+    [_docController release];
     self.tableView = nil;
     [super dealloc];
 }
@@ -141,10 +144,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.section == 0) {
-        FileListNode *node = [[self.torrent flatFileList] objectAtIndex:indexPath.row];
-        
+    FileListNode *node = [[self.torrent flatFileList] objectAtIndex:indexPath.row];
+    NSString *p = [[[(Controller *)[UIApplication sharedApplication].delegate defaultDownloadDir] stringByAppendingPathComponent:[node path]] stringByAppendingPathComponent:[node name]];
+    NSLog(@"Path : %@",p);
+    if ([[NSFileManager defaultManager] fileExistsAtPath:p]) {
+        NSLog(@"OpenClicked");
+        self.docController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:p]];
+        self.docController.delegate = self;
+        FileListCell *cell = (FileListCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+        [self.docController presentOpenInMenuFromRect:CGRectMake(0.0, 0.0, cell.contentView.frame.size.width, 20.0) inView:cell.contentView animated:YES];
+    }else {
         if (![self.torrent canChangeDownloadCheckForFiles:node.indexes]) {
             NSLog(@"[torrent canChangeDownloadCheckForFiles] returned false");
             return;
@@ -162,6 +171,7 @@
         
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
+    
 }
 
 - (void)updateUI
@@ -178,6 +188,34 @@
 {
     UITableViewCell *cell = (UITableViewCell*)[checkbox backwardReference];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[self.tableView indexPathForCell:cell]] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
+#pragma mark -
+#pragma mark UIDocumentInteractionControllerDelegate methods
+
+- (void) documentInteractionController:(UIDocumentInteractionController *)controller willBeginSendingToApplication:(NSString *)application {
+	
+}
+
+- (void) documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application {
+	
+}
+
+- (UIViewController *) documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller {
+	return self;
+}
+
+- (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller {
+	return self.navigationController.view;
+}
+
+- (CGRect) documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller {
+	return self.view.frame;
+}
+
+- (void) documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller {
+	
 }
 
 @end

@@ -11,13 +11,15 @@
 #import "CheckboxControl.h"
 
 @class Torrent, FileListCell;
-@interface FileListViewController : StatisticsViewController <CheckboxControlDelegate,UITableViewDataSource, UITableViewDelegate>
+@interface FileListViewController : StatisticsViewController <CheckboxControlDelegate,UITableViewDataSource, UITableViewDelegate, UIDocumentInteractionControllerDelegate>
 {
     Torrent *fTorrent;
     UITableView *fTableView;
+    UIDocumentInteractionController *_docController;
 }
 @property (nonatomic, readonly) Torrent *torrent;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) UIDocumentInteractionController *docController;
 
 - (id)initWithTorrent:(Torrent*)t;
 - (void)updateCell:(FileListCell*)cell;
