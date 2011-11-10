@@ -255,7 +255,7 @@
 	
 	self.doneButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonClicked:)] autorelease];
 	
-    [self.activityCounterBadge setBadgeColor:[UIColor colorWithRed:1.000 green:0.397 blue:0.419 alpha:1.000]];
+    [self.activityCounterBadge setBadgeColor:[UIColor colorWithRed:0.82 green:0.0 blue:0.082 alpha:1.000]];
 	
 //	self.statisticsView = [StatisticsView createFromNib];
 //	self.statisticsView.controller = self.controller;

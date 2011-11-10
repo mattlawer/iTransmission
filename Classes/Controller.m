@@ -356,7 +356,6 @@ static void signal_handler(int sig) {
             
             [[UIApplication sharedApplication] endBackgroundTask:bgTaskId]; 
             bgTaskId = UIBackgroundTaskInvalid;
-            [self applicationWillTerminate:[UIApplication sharedApplication]];
         }];
     }
     

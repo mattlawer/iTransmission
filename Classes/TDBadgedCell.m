@@ -68,21 +68,49 @@
     if (self.badgeColor) {
         col = self.badgeColor;
     } else {
-        col = [UIColor colorWithRed:0.530 green:0.600 blue:0.738 alpha:1.000];
+        col = [UIColor redColor];
     }
     
-	CGContextSetFillColorWithColor(context, [col CGColor]);
-	
-	CGContextBeginPath(context);
-	CGContextAddArc(context, radius, radius, radius, M_PI / 2 , 3 * M_PI / 2, NO);
-	CGContextAddArc(context, bounds.size.width - radius, radius, radius, 3 * M_PI / 2, M_PI / 2, NO);
-	CGContextClosePath(context);
-	CGContextFillPath(context);
-	CGContextRestoreGState(context);
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddArc(path, NULL, radius+1, radius+1, radius, M_PI / 2 , 3 * M_PI / 2, NO);
+    CGPathAddArc(path, NULL,  bounds.size.width - radius, radius+1, radius, 3 * M_PI / 2, M_PI / 2, NO);
+    CGPathCloseSubpath(path);
+    
+    CGFloat locations[2] = { 0.0, 0.8 };
+    
+    const float* end = CGColorGetComponents(col.CGColor);
+    CGFloat components[8] = {
+        1.0, 1.0, 1.0, end[3],          // Start color
+        end[0], end[1], end[2], end[3]	// End color
+    };
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef gradientFill = CGGradientCreateWithColorComponents (colorSpace, components, locations, 2);
+    
+    CGRect pathRect = CGPathGetBoundingBox(path);
+    CGPoint myStartPoint, myEndPoint;
+    myStartPoint.x = CGRectGetMinX(pathRect);
+    myStartPoint.y = CGRectGetMinY(pathRect)-10.0;
+    myEndPoint.x = CGRectGetMinX(pathRect);
+    myEndPoint.y = CGRectGetMaxY(pathRect);
+    
+    CGContextAddPath(context, path);
+    CGContextSaveGState(context);
+    CGContextClip(context);
+    CGContextDrawLinearGradient (context, gradientFill, myStartPoint, myEndPoint, 0);
+    CGContextRestoreGState(context);
+    
+    CGContextAddPath(context, path);
+    [[UIColor whiteColor] setStroke];
+    CGContextSetLineWidth(context, 2.0);
+    CGContextStrokePath(context);
+    
+    CGColorSpaceRelease(colorSpace);
+    CGGradientRelease(gradientFill);
+    CGPathRelease(path);
 	
 	bounds.origin.x = (bounds.size.width - numberSize.width) / 2 +0.5;
 	
-	CGContextSetBlendMode(context, kCGBlendModeClear);
+	CGContextSetRGBFillColor(context, 1.0f, 1.0f, 1.0f, 1.0f);
 	
 	[countString drawInRect:bounds withFont:self.font];
 }

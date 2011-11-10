@@ -27,6 +27,12 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		4E7D4B9D146C003E0055906A /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B97146C003E0055906A /* Icon-iPad.png */; };
+		4E7D4B9E146C003E0055906A /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B98146C003E0055906A /* Icon-Small-50.png */; };
+		4E7D4B9F146C003E0055906A /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B99146C003E0055906A /* Icon-Small.png */; };
+		4E7D4BA0146C003E0055906A /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B9A146C003E0055906A /* Icon-Small@2x.png */; };
+		4E7D4BA1146C003E0055906A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B9B146C003E0055906A /* Icon.png */; };
+		4E7D4BA2146C003E0055906A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B9C146C003E0055906A /* Icon@2x.png */; };
 		4EF8CF891469F4C8004CB688 /* bandwidth-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CF881469F4C8004CB688 /* bandwidth-icon@2x.png */; };
 		4EF8CF8C1469F5AE004CB688 /* gear-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CF8B1469F5AE004CB688 /* gear-icon@2x.png */; };
 		74244F8B1259E4D1003EACB1 /* cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 74244F8A1259E4D1003EACB1 /* cell-background.png */; };
@@ -57,7 +63,6 @@
 		7469A45C126FFF28005A404D /* BandwidthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7469A45B126FFF28005A404D /* BandwidthController.m */; };
 		7469A46112700133005A404D /* bandwidth-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7469A45F12700133005A404D /* bandwidth-icon.png */; };
 		7469A46212700133005A404D /* BandwidthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7469A46012700133005A404D /* BandwidthController.xib */; };
-		74704B5F125B0F23007DB01C /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74704B5E125B0F23007DB01C /* app-icon.png */; };
 		74861F531259DB06005FDE74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74861F521259DB06005FDE74 /* QuartzCore.framework */; };
 		74861F731259DBA0005FDE74 /* gpl-3.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74861F721259DBA0005FDE74 /* gpl-3.0.txt */; };
 		74AC8E171259E1A500342907 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AC8E161259E1A500342907 /* GradientView.m */; };
@@ -95,7 +100,6 @@
 		7E4C5FCF13CEA7E100095B64 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C5FCA13CEA7DF00095B64 /* DDTTYLogger.m */; };
 		7E9AA79713CC0118006A4174 /* Info in Resources */ = {isa = PBXBuildFile; fileRef = 7E9AA79613CC0118006A4174 /* Info */; };
 		7E9AA79A13CC0138006A4174 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AA79913CC0138006A4174 /* InfoViewController.m */; };
-		7E9B37DC1395F992006D55C7 /* itransmission-icon-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B37DB1395F992006D55C7 /* itransmission-icon-large.png */; };
 		7E9B37EB13960AC0006D55C7 /* TorrentAutoDiscoveryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B37E913960ABE006D55C7 /* TorrentAutoDiscoveryController.m */; };
 		7E9B37EC13960AC0006D55C7 /* TorrentAutoDiscoveryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B37EA13960ABF006D55C7 /* TorrentAutoDiscoveryController.xib */; };
 		7E9B37F713960F1F006D55C7 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B37F613960F1E006D55C7 /* EGORefreshTableHeaderView.m */; };
@@ -134,6 +138,12 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* iTransmission_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTransmission_Prefix.pch; sourceTree = "<group>"; };
+		4E7D4B97146C003E0055906A /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
+		4E7D4B98146C003E0055906A /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		4E7D4B99146C003E0055906A /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		4E7D4B9A146C003E0055906A /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		4E7D4B9B146C003E0055906A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		4E7D4B9C146C003E0055906A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		4EF8CF881469F4C8004CB688 /* bandwidth-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bandwidth-icon@2x.png"; path = "Resources/bandwidth-icon@2x.png"; sourceTree = "<group>"; };
 		4EF8CF8B1469F5AE004CB688 /* gear-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gear-icon@2x.png"; path = "Resources/gear-icon@2x.png"; sourceTree = "<group>"; };
 		74244F8A1259E4D1003EACB1 /* cell-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-background.png"; path = "Resources/cell-background.png"; sourceTree = "<group>"; };
@@ -180,7 +190,6 @@
 		7469A45B126FFF28005A404D /* BandwidthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandwidthController.m; sourceTree = "<group>"; };
 		7469A45F12700133005A404D /* bandwidth-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bandwidth-icon.png"; path = "Resources/bandwidth-icon.png"; sourceTree = "<group>"; };
 		7469A46012700133005A404D /* BandwidthController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BandwidthController.xib; path = Resources/BandwidthController.xib; sourceTree = "<group>"; };
-		74704B5E125B0F23007DB01C /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "Resources/app-icon.png"; sourceTree = "<group>"; };
 		74861F521259DB06005FDE74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74861F721259DBA0005FDE74 /* gpl-3.0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "gpl-3.0.txt"; path = "Resources/gpl-3.0.txt"; sourceTree = "<group>"; };
 		74AC8E151259E1A500342907 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -239,7 +248,6 @@
 		7E9AA79613CC0118006A4174 /* Info */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Info; path = Resources/Info; sourceTree = "<group>"; };
 		7E9AA79813CC0138006A4174 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		7E9AA79913CC0138006A4174 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
-		7E9B37DB1395F992006D55C7 /* itransmission-icon-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "itransmission-icon-large.png"; path = "Resources/itransmission-icon-large.png"; sourceTree = "<group>"; };
 		7E9B37E813960ABE006D55C7 /* TorrentAutoDiscoveryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorrentAutoDiscoveryController.h; sourceTree = "<group>"; };
 		7E9B37E913960ABE006D55C7 /* TorrentAutoDiscoveryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TorrentAutoDiscoveryController.m; sourceTree = "<group>"; };
 		7E9B37EA13960ABF006D55C7 /* TorrentAutoDiscoveryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TorrentAutoDiscoveryController.xib; path = Classes/TorrentAutoDiscoveryController.xib; sourceTree = "<group>"; };
@@ -369,6 +377,20 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E7D4B96146C003E0055906A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D4B97146C003E0055906A /* Icon-iPad.png */,
+				4E7D4B98146C003E0055906A /* Icon-Small-50.png */,
+				4E7D4B99146C003E0055906A /* Icon-Small.png */,
+				4E7D4B9A146C003E0055906A /* Icon-Small@2x.png */,
+				4E7D4B9B146C003E0055906A /* Icon.png */,
+				4E7D4B9C146C003E0055906A /* Icon@2x.png */,
+			);
+			name = Icons;
+			path = Resources/Icons;
 			sourceTree = "<group>";
 		};
 		4E82708C14687C45000BBE40 /* MTStatusBarOverlay */ = {
@@ -514,6 +536,7 @@
 		4E8270A014687FD8000BBE40 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4E7D4B96146C003E0055906A /* Icons */,
 				7E9B38041396102F006D55C7 /* whiteArrow.png */,
 				7E9B38051396102F006D55C7 /* whiteArrow@2x.png */,
 				7E255BE513CC4F7A009783B4 /* checkbox_checked.png */,
@@ -524,11 +547,9 @@
 				7E9B37F91396101B006D55C7 /* blackArrow@2x.png */,
 				7E9B37FA1396101B006D55C7 /* blueArrow.png */,
 				7E9B37FB1396101B006D55C7 /* blueArrow@2x.png */,
-				7E9B37DB1395F992006D55C7 /* itransmission-icon-large.png */,
 				74AFF3DF126DD361006ECB5C /* question-mark.png */,
 				74EF1F35126C0AE10054A20E /* GreenDot.png */,
 				74EF1F36126C0AE10054A20E /* YellowDot.png */,
-				74704B5E125B0F23007DB01C /* app-icon.png */,
 				74244FAA1259EE73003EACB1 /* status-view-background.png */,
 				74244F8A1259E4D1003EACB1 /* cell-background.png */,
 				7E45C7AD1391FF9800C46D76 /* donedown.png */,
@@ -655,7 +676,6 @@
 				74244FF61259F1E3003EACB1 /* down_arrow.png in Resources */,
 				74244FF71259F1E3003EACB1 /* up-arrow.png in Resources */,
 				742455E3125A1732003EACB1 /* DetailViewController.xib in Resources */,
-				74704B5F125B0F23007DB01C /* app-icon.png in Resources */,
 				74EF1F0B126C04D10054A20E /* StatisticsView.xib in Resources */,
 				74EF1F37126C0AE10054A20E /* GreenDot.png in Resources */,
 				74EF1F38126C0AE10054A20E /* YellowDot.png in Resources */,
@@ -664,7 +684,6 @@
 				7469A46212700133005A404D /* BandwidthController.xib in Resources */,
 				7E45C7AF1391FF9800C46D76 /* donedown.png in Resources */,
 				7E45C7B01391FF9800C46D76 /* doneup.png in Resources */,
-				7E9B37DC1395F992006D55C7 /* itransmission-icon-large.png in Resources */,
 				7E9B37EC13960AC0006D55C7 /* TorrentAutoDiscoveryController.xib in Resources */,
 				7E9B37FC1396101B006D55C7 /* blackArrow.png in Resources */,
 				7E9B37FD1396101B006D55C7 /* blackArrow@2x.png in Resources */,
@@ -683,6 +702,12 @@
 				7E255BE813CC4F7A009783B4 /* checkbox_unchecked.png in Resources */,
 				4EF8CF891469F4C8004CB688 /* bandwidth-icon@2x.png in Resources */,
 				4EF8CF8C1469F5AE004CB688 /* gear-icon@2x.png in Resources */,
+				4E7D4B9D146C003E0055906A /* Icon-iPad.png in Resources */,
+				4E7D4B9E146C003E0055906A /* Icon-Small-50.png in Resources */,
+				4E7D4B9F146C003E0055906A /* Icon-Small.png in Resources */,
+				4E7D4BA0146C003E0055906A /* Icon-Small@2x.png in Resources */,
+				4E7D4BA1146C003E0055906A /* Icon.png in Resources */,
+				4E7D4BA2146C003E0055906A /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,7 +819,7 @@
 				);
 				PRODUCT_NAME = iTransmission;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -824,7 +849,7 @@
 				);
 				PRODUCT_NAME = iTransmission;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -872,7 +897,7 @@
 				);
 				PRODUCT_NAME = iTransmission;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
